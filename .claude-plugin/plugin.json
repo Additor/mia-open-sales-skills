@@ -1,0 +1,9 @@
+{
+  "name": "mia-open-sales-skills",
+  "version": "0.1.0-beta.1",
+  "description": "Ten skills that run a sales team on shared, versioned criteria: Daily Sync, Meeting prep, Weekly Review, Forecast, and more.",
+  "author": {
+    "name": "Withmia"
+  },
+  "license": "Apache-2.0"
+}

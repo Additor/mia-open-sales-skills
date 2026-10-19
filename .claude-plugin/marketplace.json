@@ -1,0 +1,14 @@
+{
+  "name": "mia-open-sales-skills",
+  "owner": {
+    "name": "Withmia"
+  },
+  "plugins": [
+    {
+      "name": "mia-open-sales-skills",
+      "source": "./",
+      "description": "Ten skills that run a sales team on shared, versioned criteria.",
+      "version": "0.1.0-beta.1"
+    }
+  ]
+}

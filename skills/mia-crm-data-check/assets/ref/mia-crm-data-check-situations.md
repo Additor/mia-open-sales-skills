@@ -1,0 +1,10 @@
+# CRM data check: situations
+
+- No CRM: if a CSV is attached or pasted, read it as the CRM following `assets/ref/shared-csv-as-crm.md`. Otherwise state that and request, one time, a CSV of open deals with these columns: company, contacts, lead source, last activity, next step, close date, amount, stage, owner, deal name (most systems export these from the deal list). Run every check the CSV supports. Duplicates need domain or email data (a company or contact export): without it, mark Duplicates "not checked" and say so. Without contact data, Contacts is "not checked". Fixes are always a copy list, its own file (a chat block when files cannot be made). Give the connector steps once (a company plan may need an admin to add it first).
+- Pack files missing or seed (shared definitions): derive the guide solely from the CRM, label stage evidence "(inferred from the CRM)", carry on, and add the pack-setup closing note, not a second offer.
+- No call recordings or email: run the CRM-only checks, mark Fill from calls and email "not checked (no call tool or email connected)", and judge Stage vs. activity on CRM records alone, saying so.
+- A source fails mid-read: retry once and move on (for example, call summaries stopping at 8 of 20). Count only what was read.
+- Large CRM: check the 200 most recently active deals; for a leader, sample in proportion to each rep. Give whole-pipeline totals through filter counts where possible.
+- Several pipelines: check each against its own stages. If non-sales pipelines (renewal, partner, support) exist, confirm in the Step 2 message and drop them from the guide if unwanted. If a retired pipeline left out of the guide holds open deals, give the count in one line; they probably need closing out.
+- Deliberately blank field: if the person states that a field is not relevant (say, source goes untracked for renewals), record this in the guide and tell them to swap in the updated file.
+- Guide drift: a changed guide line takes effect only after "Refresh my CRM guide", because the team may have set it deliberately.
