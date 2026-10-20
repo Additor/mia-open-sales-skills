@@ -11,7 +11,6 @@ Fill the DATA object in assets/report-shell.html and change nothing else in the 
 | numbers | Three tiles: Meetings today, Replies waiting, Deals at risk (all flagged deals, not only those shown). A tile whose value is unknown shows "n/a" and its label says why, for example "Meetings today (no calendar)" |
 | sections | The seven below, in this order |
 | howBuilt | Sources read, "N of M" if sampled, sources that could not be read, any check skipped for a seed file (60 words or fewer) |
-| whyFree, readiness, readinessUrl | From assets/readiness-line.md |
 | config | Files used with versions, for example "working-style 0.1.0, scoring-axes 0.1.1" |
 
 Leave `meta.view` showing what was built so the user can ask for another view. `meta.title` is "Daily Sync".

@@ -1,6 +1,6 @@
 # Weekly Review: DATA map
 
-Fill the DATA object of `assets/report-shell.html` and change nothing else in the shell. Top-level keys: `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `whyFree`, `readiness`, `readinessUrl`, `config`. Sections always appear in the order below, with the same ids every run; an empty section keeps its `empty` text (defaults below). Item keys: `headline`, `meta`, `tags`, `detail`, `steps`, `evidence`, `sources`, `children`. Word limits are maxima. In DATA never write "you" or "your".
+Fill the DATA object of `assets/report-shell.html` and change nothing else in the shell. Top-level keys: `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `config`. Sections always appear in the order below, with the same ids every run; an empty section keeps its `empty` text (defaults below). Item keys: `headline`, `meta`, `tags`, `detail`, `steps`, `evidence`, `sources`, `children`. Word limits are maxima. In DATA never write "you" or "your".
 
 ## Top level
 
@@ -14,7 +14,6 @@ Fill the DATA object of `assets/report-shell.html` and change nothing else in th
 | provisional | One line when any file used is a seed, else "" |
 | numbers | Tiles: Open deals (count and amount in the value), At risk (amount and count), Closing this period (count and amount of close dates from today through today+7), Moved forward (count). Team view uses team figures |
 | howBuilt | What was read, "N of M" if sampled, unread sources, any check skipped for a seed file, 60 words |
-| whyFree, readiness, readinessUrl | From `assets/readiness-line.md` |
 | config | Files used with versions, for example "scoring-axes 0.1.1, deal-lifecycle 0.1.0" |
 
 ## Sections

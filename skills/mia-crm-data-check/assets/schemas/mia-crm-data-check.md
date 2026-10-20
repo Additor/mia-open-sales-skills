@@ -1,6 +1,6 @@
 # Report map: mia-crm-data-check
 
-Fill `DATA` in `assets/report-shell.html` with the keys `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `whyFree`, `readiness`, `readinessUrl`, `config`. Section order is fixed. Every section is present on every run; use `empty` text when it has no items. No second-person wording anywhere in DATA except inside a quote. Deal names are company names without CRM suffixes. Amounts are numbers only; omit when unknown.
+Fill `DATA` in `assets/report-shell.html` with the keys `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `config`. Section order is fixed. Every section is present on every run; use `empty` text when it has no items. No second-person wording anywhere in DATA except inside a quote. Deal names are company names without CRM suffixes. Amounts are numbers only; omit when unknown.
 
 ## Top-level keys
 
@@ -14,7 +14,7 @@ Fill `DATA` in `assets/report-shell.html` with the keys `meta`, `provisional`, `
 | provisional | Provisional line when any file used is a seed (including a guide built this run) |
 | numbers | Four tiles: Checked deals, Clean (passed every check), Need fixing, Fixes ready |
 | howBuilt | At most 60 words on what was read, "N of M" sampling, and unread sources; note any limited check, any check skipped for a seed file or a missing column, and any read cap hit |
-| whyFree, readiness, readinessUrl, config | Per the shared rules and `assets/readiness-line.md` |
+| config | Per the shared rules |
 
 ## Sections
 

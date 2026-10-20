@@ -124,7 +124,7 @@ Never edit `skills/` by hand. The build regenerates it. Raise the file version a
 - Report skills are read-only. They never send, post or write to your CRM.
 - Skills that propose changes (`mia-call-follow-up`, `mia-crm-data-check`) wait for your explicit approval.
 - Skills run when you call them and read only the sources you connect.
-- Reports make no network request when they open. A footer may carry one link to the Sales AQ check, with a campaign tag and no deal data, followed only if you click it.
+- Reports make no network request when they open and contain no tracking links.
 - Reports describe work, not people: no scores, rankings or personal adjectives for reps.
 
 ## Contributing

@@ -1,6 +1,6 @@
 # Report map: mia-axes-calibration
 
-Fill `DATA` in `assets/report-shell.html` with the keys `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `whyFree`, `readiness`, `readinessUrl`, `config`. Section order is fixed and every section appears on every run. No second-person wording in DATA except inside a quote. The report describes deals and criteria, never people. Deal names are company names without CRM suffixes. Leave `readiness` and `readinessUrl` empty: a replay of closed deals does not measure any readiness dimension.
+Fill `DATA` in `assets/report-shell.html` with the keys `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `config`. Section order is fixed and every section appears on every run. No second-person wording in DATA except inside a quote. The report describes deals and criteria, never people. Deal names are company names without CRM suffixes.
 
 ## Top-level keys
 
@@ -13,7 +13,7 @@ Fill `DATA` in `assets/report-shell.html` with the keys `meta`, `provisional`, `
 | provisional | Provisional line when scoring-axes is a seed; call its categories "starting values" |
 | numbers | Closed deals analyzed, Won, Lost, From snapshots, Reconstructed |
 | howBuilt | At most 60 words: what was read, the 30-day cutoff (or that it was not enforced in a lifetime replay), which deals used snapshots and which were reconstructed, unread sources, any check skipped for a seed file. Untestable signals go in `limits`, not here |
-| whyFree, config | Per the shared rules; `config` names the scoring-axes version used |
+| config | Per the shared rules; `config` names the scoring-axes version used |
 
 ## Sections
 

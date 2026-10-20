@@ -1,6 +1,6 @@
 # Forecast: DATA map
 
-Fill the DATA object of `assets/report-shell.html` and change nothing else in the shell. Top-level keys: `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `whyFree`, `readiness`, `readinessUrl`, `config`. Sections always appear in the order below with the same ids; an empty one keeps its `empty` text. Item keys: `headline`, `meta`, `tags`, `detail`, `steps`, `evidence`, `sources`, `children`. Word limits are maxima. In DATA never write "you" or "your". The forecast makes no probabilities and no scores.
+Fill the DATA object of `assets/report-shell.html` and change nothing else in the shell. Top-level keys: `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `config`. Sections always appear in the order below with the same ids; an empty one keeps its `empty` text. Item keys: `headline`, `meta`, `tags`, `detail`, `steps`, `evidence`, `sources`, `children`. Word limits are maxima. In DATA never write "you" or "your". The forecast makes no probabilities and no scores.
 
 ## Top level
 
@@ -13,7 +13,6 @@ Fill the DATA object of `assets/report-shell.html` and change nothing else in th
 | provisional | A line when scoring-axes or any file used is a seed; categories are then called starting values |
 | numbers | Tiles: Deals in period; CRM commit (field name in the label, the `crmLabel`: "CRM commit (Forecast category)"); Evidence commit; Slip. With a target, add Target and Coverage ratio. One more tile gives the spread: "3 Commit · 7 Best Case · 12 Pipeline". Amounts are sums of deals with amounts; with no amounts, tiles show counts |
 | howBuilt | What was read, CRM field used for CRM commit, "N of M" if sampled, unread sources, deals with no amount (count), any check skipped for a seed file, 60 words |
-| whyFree, readiness, readinessUrl | From `assets/readiness-line.md` |
 | config | Files used with versions |
 
 The one line explaining the two values goes in the `note` of the Differences section, which sits directly under the tiles: CRM commit is what the CRM holds today; Evidence commit is what the buyer's own words and actions support.

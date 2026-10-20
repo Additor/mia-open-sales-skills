@@ -18,4 +18,4 @@ DATA never says "you" or "your": use first names or "the team". Quotes and the f
 At most 60 words. It names the sources read, "N of M" when sampled, the sources not read, and any check skipped because a seed file lacks what it needs (one clause).
 
 ## Format and footer
-Fall back from artifact to HTML to Markdown. The footer follows `assets/readiness-line.md`.
+Fall back from artifact to HTML to Markdown. The footer holds one collapsed note, "How this was built", and the `Config:` line.

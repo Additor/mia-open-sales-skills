@@ -35,7 +35,6 @@ summary{cursor:pointer}
 .kids{margin-top:6px}
 .kids .item{background:var(--bg)}
 footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
-footer a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -49,9 +48,6 @@ const DATA = {
   numbers: [],     // [ { label, value } ]
   sections: [],    // [ { id, title, note, cap, empty, items: [Item] } ]  cap 0 or missing = show all
   howBuilt: "",
-  whyFree: "",
-  readiness: "",   // empty unless a dimension is weak
-  readinessUrl: "",
   config: ""
 };
 const app = document.getElementById("app");
@@ -87,8 +83,6 @@ DATA.sections.forEach(sec => {
 });
 const f = el("footer");
 const d = el("details"); d.appendChild(el("summary", "How this was built")); d.appendChild(el("div", DATA.howBuilt)); f.appendChild(d);
-if(DATA.whyFree) f.appendChild(el("p", DATA.whyFree));
-if(DATA.readiness){ const p = el("p", DATA.readiness + " "); if(DATA.readinessUrl){ const a = el("a", "Full check"); a.href = DATA.readinessUrl; a.rel = "noopener"; p.appendChild(a); } f.appendChild(p); }
 f.appendChild(el("div", "Config: " + DATA.config));
 app.appendChild(f);
 </script>

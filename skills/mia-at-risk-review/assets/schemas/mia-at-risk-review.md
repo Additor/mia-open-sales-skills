@@ -1,6 +1,6 @@
 # At-risk Review: DATA map
 
-Fill the DATA object of `assets/report-shell.html` and change nothing else in the shell. Top-level keys: `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `whyFree`, `readiness`, `readinessUrl`, `config`. Sections always appear in the order below with the same ids; an empty one keeps its `empty` text. Item keys: `headline`, `meta`, `tags`, `detail`, `steps`, `evidence`, `sources`, `children`. Word limits are maxima. In DATA never write "you" or "your". Give the page every deal and let `cap` and `children` fold the rest. Spell each owner's name identically in every list.
+Fill the DATA object of `assets/report-shell.html` and change nothing else in the shell. Top-level keys: `meta`, `provisional`, `numbers`, `sections`, `howBuilt`, `config`. Sections always appear in the order below with the same ids; an empty one keeps its `empty` text. Item keys: `headline`, `meta`, `tags`, `detail`, `steps`, `evidence`, `sources`, `children`. Word limits are maxima. In DATA never write "you" or "your". Give the page every deal and let `cap` and `children` fold the rest. Spell each owner's name identically in every list.
 
 ## Top level
 
@@ -13,7 +13,6 @@ Fill the DATA object of `assets/report-shell.html` and change nothing else in th
 | provisional | A line when any file used is a seed |
 | numbers | Amount at risk (red deals); Amount gone quiet (says it overlaps with at risk); Unkept promises this month, shown as "N (M unconfirmed)". Leave out a tile that cannot be computed |
 | howBuilt | What was read, "N of M" if sampled, where follow-ups were and were not checked, missing columns, any check skipped for a seed file, 60 words |
-| whyFree, readiness, readinessUrl | From `assets/readiness-line.md` |
 | config | Files used with versions |
 
 The Habits `note` holds, in this order: the `measuredAgainst` line ("Measured against: the team's pack files" or "Measured against: CRM stages plus the default habits (no pack yet)"); any habit left out because the data cannot measure it (including an email-count habit with fewer than 10 logged outbound emails); and, in a team view, at most one standout statement. The statement describes the work only, what the habit looks like and counts on both sides ("recaps went out within a day for 9 of 10 demos with a booked next step, 2 of 8 without"). It ranks no one and passes no judgement on a named person.

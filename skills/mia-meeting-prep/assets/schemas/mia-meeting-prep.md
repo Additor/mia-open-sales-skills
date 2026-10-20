@@ -11,7 +11,6 @@ Fill the DATA object in assets/report-shell.html and change nothing else in the 
 | numbers | Gaps (count of Still unknown items) and Open promises (count of items tagged Open in Since your last call) |
 | sections | Those present of the eight below, in this order |
 | howBuilt | What was read, anything that could not be read, any check skipped for a seed file, and meetings left out as "owned by another rep" (60 words or fewer) |
-| whyFree, readiness, readinessUrl | From assets/readiness-line.md |
 | config | Files used with versions |
 
 Make the header unmistakable about which meeting was chosen, and add the meeting number (real meetings only; "Meeting N or later (n logged)" when earlier meetings are not logged). For a first meeting with no buyer-side material, write "First meeting, no prior touchpoints" as the first section's `note`, and include only Who's in the room, Talking points, and Still unknown. For a vendor or partner, say so in `meta.view`, and build only a short brief (attendees, what is open on both sides, what to get). Every fact row has `sources` saying whether it came from a call, email, or CRM note and when.
