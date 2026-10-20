@@ -1,5 +1,7 @@
 # Mia Open Sales Skills
 
+<p align="center"><img src="docs/images/hero.jpg" alt="Mia Open Sales Skills: 10 free Claude skills for running a sales team. One set of written criteria for every deal." width="100%"></p>
+
 ![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Version: 0.1.0-beta.2](https://img.shields.io/badge/version-0.1.0--beta.2-orange) ![Skills: 10](https://img.shields.io/badge/skills-10-green)
 
 Sales skills that judge every deal by the same written criteria, so your team stops arguing about what "Commit" means.
@@ -37,6 +39,8 @@ The first results carry a *provisional* label, because the pack files are drafts
 
 No CRM connection yet? Attach a CSV export of your deals and the skills treat it as the CRM.
 
+<p align="center"><img src="docs/images/report-preview.jpg" alt="Example Daily Sync report with next moves, today's meetings, risks and a Config line, using fictional data" width="100%"></p>
+
 ## Why this exists
 
 | Problem | What the pack does |
@@ -48,6 +52,10 @@ No CRM connection yet? Attach a CSV export of your deals and the skills treat it
 | Tools lock you in | The pack is Markdown. It runs in Claude and in any AI tool that reads files |
 
 ## Skills
+
+<p align="center"><img src="docs/images/skills.jpg" alt="The ten skills grouped as Set up, Every day, Every week and Keep it honest, each with the phrase that calls it" width="100%"></p>
+
+Each skill says what it is not for and which skill to use instead, so a plain request reaches the right one.
 
 **Set up**
 
@@ -71,13 +79,9 @@ No CRM connection yet? Attach a CSV export of your deals and the skills treat it
 - **[mia-crm-data-check](skills/mia-crm-data-check/SKILL.md)**: Learns how your team uses the CRM, checks open deals against it, and prepares fixes for approval. *"Check my CRM data"*
 - **[mia-axes-calibration](skills/mia-axes-calibration/SKILL.md)**: Replays your scoring criteria on closed deals and proposes edits where outcomes disagree. *"Calibrate my axes"*
 
-Each skill says what it is not for and which skill to use instead, so a plain request reaches the right one.
-
 ## How it works
 
-```
-CRM, calls, email  ->  mia-pack-setup  ->  pack files (you review)  ->  other skills  ->  report ending in a Config: line
-```
+<p align="center"><img src="docs/images/how-it-works.jpg" alt="Four steps: read your data, draft nine pack files with mia-pack-setup, review and version them, run the ten skills" width="100%"></p>
 
 1. `mia-pack-setup` drafts nine Markdown **pack files** that describe how your team sells: stages, buyers, competitors, scoring criteria, voice, standing rules.
 2. You and your team review and version them like code.

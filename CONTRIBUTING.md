@@ -10,6 +10,7 @@ src/shared/context.md  Shared rules inserted into every skill
 config/                Pack file templates, schema, team rollout guide
 assets/                Report shell (HTML), output schemas, reference notes
 docs/                  Longer documentation linked from the README
+docs/images/           README images (JPG), HTML sources in src/, paintings in src/art/
 scripts/build.py       Builds skills/ from src/
 ```
 
@@ -42,6 +43,10 @@ Never edit `skills/` by hand. The build script deletes and regenerates it. Commi
 3. Run `python3 scripts/build.py`.
 4. Add a row to the skill table in `README.md`.
 5. Bump the version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
+
+## README images
+
+The images in `docs/images/` render from the HTML in `docs/images/src/` with the Mia night theme tokens. Edit the HTML, then run `docs/images/render.sh` (needs Google Chrome and Node; set `CHROME` to use another browser path). Images encode as mozjpeg at about 100 KB each. Commit the regenerated JPGs.
 
 ## License of contributions
 

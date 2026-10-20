@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+.stage { height: 560px; }
+.stage .art { background-image: url('art/water-lilies-1906-monet.jpg'), linear-gradient(160deg, #3b4a6e 0%, #2a3350 50%, #2d4a45 100%); background-position: center 40%; }
+.content { padding: 44px 50px; }
+.window { width: 1100px; }
+.body { padding: 28px 28px 30px; display: grid; grid-template-columns: 1fr 24px 1fr 24px 1.15fr 24px 1.15fr; align-items: start; }
+.arrow { align-self: center; color: var(--ink-muted); font-size: 18px; text-align: center; margin-top: 60px; }
+.step h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; letter-spacing: -0.02em; margin: 10px 0 8px; }
+.step p { font-size: 13px; line-height: 1.5; color: var(--ink-sub); }
+.chips { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; }
+.chip { background: var(--paper-warm); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; color: var(--ink); }
+.files { margin-top: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-family: var(--mono); font-size: 11.5px; line-height: 1.75; color: var(--ink-sub); }
+.files b { color: var(--accent); font-weight: 500; }
+.out { margin-top: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.out .t { font-size: 13px; color: var(--ink); margin-bottom: 8px; }
+.out .r { height: 6px; border-radius: 3px; background: var(--paper-warm); margin-bottom: 7px; }
+.out .cfg { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10.5px; color: var(--accent); line-height: 1.5; }
+.foot { padding: 14px 28px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-muted); display: flex; justify-content: space-between; }
+</style></head><body>
+<div class="stage"><div class="art"></div><div class="veil"></div>
+<div class="content"><div class="window">
+  <div class="bar"><i></i><i></i><i></i><span>how it works</span></div>
+  <div class="body">
+    <div class="step"><div class="label">01 · Read</div><h3>Your own data</h3><p>Setup reads the sources you connect. Nothing runs until you call it.</p>
+      <div class="chips"><div class="chip">CRM or CSV export</div><div class="chip">Call recordings</div><div class="chip">Inbox</div><div class="chip">Calendar</div></div></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step"><div class="label">02 · Draft</div><h3>mia-pack-setup</h3><p>Drafts nine Markdown pack files that describe how your team sells. Type-level only: no buyer names, no open-deal details.</p></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step"><div class="label">03 · Review</div><h3>Pack files you own</h3><p>Fix them, version them, share them like code.</p>
+      <div class="files">deal-lifecycle.md<br>scoring-axes.md <b>seed &rarr; reviewed</b><br>buyers-and-competition.md<br>market-physics.md<br>winning-plays.md<br>team-standards.md<br>crm-guide.md<br>voice.md<br>working-style.md</div></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step"><div class="label">04 · Run</div><h3>10 skills, one standard</h3><p>Every report applies the same written criteria.</p>
+      <div class="out"><div class="t">Daily Sync · Weekly Review · Forecast</div><div class="r" style="width:92%"></div><div class="r" style="width:70%"></div><div class="r" style="width:82%"></div>
+      <div class="cfg">Config: scoring-axes 1.2.0,<br>deal-lifecycle 1.0.1</div></div></div>
+  </div>
+  <div class="foot"><span>The last line of every output names the files and versions it used.</span><span class="mono">AGPL-3.0</span></div>
+</div></div></div></body></html>
