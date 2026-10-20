@@ -1,10 +1,12 @@
 # Mia Open Sales Skills
 
-Ten free AI skills that let a sales team judge every deal by the same written criteria.
+![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Version: 0.1.0-beta.2](https://img.shields.io/badge/version-0.1.0--beta.2-orange) ![Skills: 10](https://img.shields.io/badge/skills-10-green)
+
+Ten free, open-source AI skills that let a sales team judge every deal by the same written criteria.
 
 You keep the criteria as plain Markdown files, edit them as your process changes, and every report prints the file versions it used. The skills run in Claude and in any AI tool that can read files.
 
-> **Status: 0.1.0 beta.** Tested on exported CSV, calendar and call data. Live connector paths (CRM, email, calendar) and marketplace install are still being verified with real teams. Send feedback to the Withmia team via https://withmia.ai.
+> **Status: 0.1.0-beta.2.** Tested on exported CSV, calendar and call data. Live connector paths (CRM, email, calendar) and marketplace install are still being verified with real teams. Send feedback to the Withmia team via https://withmia.ai.
 
 ## Contents
 
@@ -52,7 +54,7 @@ You do not need a CRM connection to try it. Attach or paste a CSV export of your
 /plugin install mia-open-sales-skills@mia-open-sales-skills
 ```
 
-Access to a private copy of this repository needs a GitHub login that can read it.
+While the repository is private, Claude Code needs a GitHub login that can read it.
 
 ### Claude Code (manual copy)
 
@@ -193,6 +195,15 @@ Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Ed
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+GNU Affero General Public License v3.0 only (`AGPL-3.0-only`). See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+In practice:
+
+- **Use it inside your company, freely.** Install the skills, edit the pack files, and run them on your own deals. No obligation arises from internal use.
+- **Share your changes if you share the pack.** If you distribute a modified copy, or offer a modified version to others as a hosted service over a network, you must publish your modified source under the same license.
+- **Keep the notices.** Copies must carry the LICENSE and NOTICE files.
+- **Your data stays yours.** The license covers the files in this repository. Pack files and reports you generate from your own CRM, calls, and email are your content.
+
+This summary is a convenience. The LICENSE file is the binding text.
 
 Copyright 2026 Withmia (withmia.ai).

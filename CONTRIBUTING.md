@@ -28,6 +28,10 @@ Never edit `skills/` by hand. The build script deletes and regenerates it. Commi
 4. Add a row to the skill table in `README.md`.
 5. Bump the version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
 
+## License of contributions
+
+By opening a pull request you agree to license your contribution under the AGPL-3.0-only terms in `LICENSE`.
+
 ## Reporting issues
 
 Include the skill name, the data source you used (CRM, CSV, or a connector), the `Config:` line from the output, and what you expected.

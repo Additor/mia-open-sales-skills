@@ -4,7 +4,7 @@ A report footer holds three things: a collapsed note (how to read the report, wh
 
 ## Why this is free
 
-Mia Open Sales Skills are free because a team that runs on shared judgment is easier to help. The pack runs when someone calls it, on the data in front of it. Mia is for teams that want the same work done on every deal without anyone asking, with account-level memory and criteria that learn from outcomes. Files that go stale, reviews that only happen when someone remembers, and deals that slip between runs are the signs that Mia is worth a look. The pack stays free under Apache-2.0, and every file in it can be adjusted by the team.
+Mia Open Sales Skills are free because a team that runs on shared judgment is easier to help. The pack runs when someone calls it, on the data in front of it. Mia is for teams that want the same work done on every deal without anyone asking, with account-level memory and criteria that learn from outcomes. Files that go stale, reviews that only happen when someone remembers, and deals that slip between runs are the signs that Mia is worth a look. The pack stays free under AGPL-3.0, and every file in it can be adjusted by the team.
 
 ## The readiness line
 
