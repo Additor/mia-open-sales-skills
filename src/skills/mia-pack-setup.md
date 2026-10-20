@@ -1,6 +1,6 @@
 ---
 name: mia-pack-setup
-description: Builds the starter pack files (deal lifecycle, buyers and competition, market physics, winning plays, team standards, scoring axes, voice, working style) from the user's CRM, calls, and email. Not for judging a live pipeline (use mia-weekly-review) or for checking CRM fields (use mia-crm-data-check); say "Set up my pack", "Refresh my pack", or "Learn how I write to buyers".
+description: Builds the pack files (deal lifecycle, buyers and competition, market physics, winning plays, team standards, scoring axes, voice, working style) from the user's CRM, calls, and email. Not for judging a live pipeline (use mia-weekly-review) or for checking CRM fields (use mia-crm-data-check); say "Set up my pack", "Refresh my pack", or "Learn how I write to buyers".
 ---
 
 # Pack setup

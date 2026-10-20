@@ -6,7 +6,7 @@ The skills run in any AI tool that can load Agent Skills (a folder with a `SKILL
 
 | | Workspace mode | Chat mode |
 |---|---|---|
-| Tools | Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot and other coding agents | Claude on the web or desktop, other chat apps |
+| Tools | Claude Code, Codex and other coding agents | Claude on the web or desktop, other chat apps |
 | The skill can | Read and write files in your working folder | Read attached files and write only in the chat |
 | Pack files | Written to `mia-pack/` after you confirm | Handed to you as downloads or copy blocks. You keep them in a project or attach them |
 | Reports | Saved as `mia-reports/<skill name>-<date>.html` (Markdown when the tool cannot show HTML) | Shown in the chat or as an artifact |
@@ -39,11 +39,10 @@ If the project is a git repository:
 
 | Tool | Command or path |
 |---|---|
-| Any coding agent | `npx skills add Additor/mia-open-sales-skills` ([skills CLI](https://github.com/vercel-labs/skills) detects your agents; `-g` installs for all projects, `--skill <name>` picks one) |
+| Any coding agent | `npx skills add Additor/mia-open-sales-skills` (detects your agents; `-g` installs for all projects, `--skill <name>` picks one) |
 | Claude Code, plugin | `/plugin marketplace add Additor/mia-open-sales-skills` then `/plugin install mia-open-sales-skills@mia-open-sales-skills` |
 | Claude Code, manual | Copy `skills/*` to `.claude/skills/` (project) or `~/.claude/skills/` (user) |
 | Codex, manual | Copy `skills/*` to `.agents/skills/` (repository) or `~/.agents/skills/` (user) |
-| Cursor, OpenCode, Gemini CLI, GitHub Copilot | Project path `.agents/skills/`. Global paths differ per tool, so use the skills CLI |
 | Claude on the web or desktop | Zip a folder from `skills/` and upload it as a custom skill. Install `mia-pack-setup` first |
 | Any other AI tool | Paste a `SKILL.md` into the instructions and attach that folder's `config/` and `assets/` files |
 

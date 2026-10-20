@@ -12,7 +12,7 @@ Then save the team pack bundle: those six files plus this page, in one folder na
 
 Put the team files in your `mia-pack/` folder (or wherever your tool keeps pack files), and do not edit them. Then run mia-pack-setup. It sees the team files and builds only your voice and your working style from your own deals and email.
 
-Until the leader has marked the team files reviewed, your first results carry a provisional label. That is expected, and it goes away once the files change from seed to reviewed.
+Until the leader has marked the team files reviewed, your results show a provisional label until the files change from seed to reviewed.
 
 At the end of every output you will find a `Config:` line listing the files used and their versions. Compare it with the versions the leader announced. If a number differs, ask for the latest bundle before you trust the result.
 

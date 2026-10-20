@@ -12,8 +12,8 @@ render() { # name width height
     --screenshot="$tmp/$1.png" "file://$PWD/src/$1.html" >/dev/null 2>&1
 }
 render hero 1200 630
-render how-it-works 1200 560
-render skills 1200 700
-render report-preview 1200 760
+render how-it-works 1200 508
+render skills 1200 680
+render report-preview 1200 706
 npm install --prefix "$tmp" sharp >/dev/null 2>&1
 NODE_PATH="$tmp/node_modules" node encode.cjs "$tmp" "$PWD"

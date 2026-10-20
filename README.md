@@ -1,6 +1,6 @@
 # Mia Open Sales Skills
 
-<p align="center"><img src="docs/images/hero.jpg" alt="Mia Open Sales Skills: 10 free Claude skills for running a sales team. One set of written criteria for every deal." width="100%"></p>
+<p align="center"><img src="docs/images/hero.jpg" alt="Mia Open Sales Skills: 10 free Claude skills for running a sales team" width="100%"></p>
 
 ![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Skills: 10](https://img.shields.io/badge/skills-10-green)
 
@@ -33,11 +33,11 @@ Answer a short opening question and confirm what it found in your CRM, calls and
 Start my Daily Sync
 ```
 
-The first results carry a *provisional* label, because the pack files are drafts built from data. A leader reads them, fixes what is wrong, sets `status: reviewed`, and shares them with the team.
+If you lead a team, read the files, fix what is wrong, set `status: reviewed`, and share them with your reps (see [Team rollout](#team-rollout)).
 
 No CRM connection yet? Attach a CSV export of your deals and the skills treat it as the CRM.
 
-<p align="center"><img src="docs/images/report-preview.jpg" alt="Example Daily Sync report with next moves, today's meetings, risks and a Config line, using fictional data" width="100%"></p>
+<p align="center"><img src="docs/images/report-preview.jpg" alt="Example Daily Sync report with next moves, today's meetings, risks and a Config line" width="100%"></p>
 
 ## Why this exists
 
@@ -57,7 +57,7 @@ Each skill says what it is not for and which skill to use instead, so a plain re
 
 **Set up**
 
-- **[mia-pack-setup](skills/mia-pack-setup/SKILL.md)**: Drafts your starter pack files from your CRM, calls and email. *"Set up my pack"*
+- **[mia-pack-setup](skills/mia-pack-setup/SKILL.md)**: Builds your pack files from your CRM, calls and email. *"Set up my pack"*
 
 **Every day**
 
@@ -79,9 +79,9 @@ Each skill says what it is not for and which skill to use instead, so a plain re
 
 ## How it works
 
-<p align="center"><img src="docs/images/how-it-works.jpg" alt="Four steps: read your data, draft nine pack files with mia-pack-setup, review and version them, run the ten skills" width="100%"></p>
+<p align="center"><img src="docs/images/how-it-works.jpg" alt="Four steps: read your data, write nine pack files with mia-pack-setup, review and version them, run the ten skills" width="100%"></p>
 
-1. `mia-pack-setup` drafts nine Markdown **pack files** that describe how your team sells: stages, buyers, competitors, scoring criteria, voice, standing rules.
+1. `mia-pack-setup` writes nine Markdown **pack files** that describe how your team sells: stages, buyers, competitors, scoring criteria, voice, standing rules.
 2. You and your team review and version them like code.
 3. The other skills read those files and end every output with a `Config:` line. Compare those numbers across your team to confirm everyone runs the same files.
 
@@ -89,7 +89,7 @@ Pack files hold type-level descriptions only. They contain no buyer names, no ex
 
 ## Install
 
-For Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot and other coding agents, one command installs into each agent's skill folder:
+For Claude Code, Codex and other coding agents, one command installs into each agent's skill folder:
 
 ```
 npx skills add Additor/mia-open-sales-skills

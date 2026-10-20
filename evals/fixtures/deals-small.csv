@@ -1,13 +1,13 @@
 owner,company,stage,status,amount,created_date,close_date,stage_entered_date,next_step,next_step_due,last_activity_date,forecast_category,competitor,champion,economic_buyer_engaged,loss_reason
-Dana Cho,Ironwick Tools,Closed Won,won,18000,2026-03-10,2026-06-12,2026-06-01,,,2026-06-12,Closed,Brightline CRM,yes,no,
+Dana Cho,Ironwick Tools,Closed Won,won,18000,2026-03-10,2026-06-12,2026-06-01,,,2026-06-12,Closed,Ridgeway Systems,yes,no,
 Marcus Reid,Cobalt Meadow Games,Closed Won,won,21500,2026-04-11,2026-07-13,2026-07-02,,,2026-07-13,Closed,,yes,yes,
 Dana Cho,Fernside Dental,Closed Won,won,25000,2026-05-12,2026-08-14,2026-08-03,,,2026-08-14,Closed,,yes,yes,
 Marcus Reid,Gannet Analytics,Closed Won,won,28500,2026-06-13,2026-09-15,2026-09-04,,,2026-09-15,Closed,,yes,no,
 Dana Cho,Harbourlight Hotels,Closed Won,won,32000,2026-03-14,2026-06-16,2026-06-05,,,2026-06-16,Closed,,yes,yes,
 Marcus Reid,Ivywood Schools,Closed Won,won,35500,2026-04-15,2026-07-17,2026-07-06,,,2026-07-17,Closed,Corvid Systems,yes,yes,
 Marcus Reid,Juniper Ridge Farms,Closed Lost,lost,15000,2026-03-08,2026-06-05,2026-05-01,,,2026-05-20,Closed,Corvid Systems,no,yes,No decision
-Dana Cho,Kestrel Aero Parts,Closed Lost,lost,19200,2026-04-09,2026-07-06,2026-06-02,,,2026-06-21,Closed,Brightline CRM,yes,no,Lost to competitor
+Dana Cho,Kestrel Aero Parts,Closed Lost,lost,19200,2026-04-09,2026-07-06,2026-06-02,,,2026-06-21,Closed,Ridgeway Systems,yes,no,Lost to competitor
 Marcus Reid,Lanternfly Studios,Closed Lost,lost,23400,2026-05-10,2026-08-07,2026-07-03,,,2026-07-22,Closed,Corvid Systems,no,no,Budget
 Dana Cho,Mossbank Credit,Closed Lost,lost,27600,2026-06-11,2026-09-08,2026-08-04,,,2026-08-23,Closed,Corvid Systems,yes,yes,No decision
-Marcus Reid,Nettlebed Software,Closed Lost,lost,31800,2026-03-12,2026-06-09,2026-05-05,,,2026-05-24,Closed,Brightline CRM,no,no,Went quiet
-Dana Cho,Orrin Packaging,Closed Lost,lost,36000,2026-04-13,2026-07-10,2026-06-06,,,2026-06-25,Closed,Brightline CRM,yes,no,No decision
+Marcus Reid,Nettlebed Software,Closed Lost,lost,31800,2026-03-12,2026-06-09,2026-05-05,,,2026-05-24,Closed,Ridgeway Systems,no,no,Went quiet
+Dana Cho,Orrin Packaging,Closed Lost,lost,36000,2026-04-13,2026-07-10,2026-06-06,,,2026-06-25,Closed,Ridgeway Systems,yes,no,No decision

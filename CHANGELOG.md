@@ -7,6 +7,7 @@
 - `mia-call-follow-up` saves its document as Markdown instead of offering a report with no layout. `mia-daily-sync` is described as a one-screen page.
 - `mia-pack-setup` no longer writes company names or exact amounts into pack files, for won and lost deals as well as open ones. Found by the new evals.
 - Added `evals/`: five headless end-to-end cases with fictional fixtures (`evals/run.sh`).
+- README images use the official Mia logo; the hero puts it at the bottom right. Removed captions, footers and wording that read as unfinished.
 - Install with `npx skills add Additor/mia-open-sales-skills`, plus Codex paths. New `docs/environments.md`.
 
 ## 0.1.0 (2026-10-20)

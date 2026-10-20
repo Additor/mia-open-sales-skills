@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Run the skills headless in a temporary workspace and check the files they write.
-# `claude plugin eval` is early access, so this uses `claude -p`. Each case calls the model.
+# Each case runs the skill with `claude -p` and calls the model.
 # Usage: evals/run.sh [case ...]   Env: MODEL (default sonnet), BUDGET (USD per case, default 2)
 set -uo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
