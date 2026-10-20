@@ -20,7 +20,7 @@ Snapshot lines come from earlier mia-forecast runs. In workspace mode mia-foreca
 Full run: 20 closed deals with at least 5 won and 5 lost. Read at most 100, most recent first, within the view and scope set by the shared rules (a leader reads the team's deals, a rep their own). Below that, never end on a bare refusal:
 
 - A personal scope below the minimum: say how many closed deals it holds and offer the team scope or a pasted team CSV.
-- 8 to 19 closed deals, or fewer than 5 of one outcome: run a directional replay. Build the report with the replay and the Signals, leave Proposed edits on its empty text, and say how many more closed deals, and of which outcome, a full run needs.
+- 8 or more closed deals but below the full minimum (under 20, or under 5 won, or under 5 lost): run a directional replay. Build the report with the replay and the Signals, leave Proposed edits on its empty text, and say how many more closed deals, and of which outcome, a full run needs.
 - Fewer than 8 closed deals: build no report. Say how many more are needed and what to bring: a CSV of closed deals from the past 12 months with stage, amount, created date, close date and outcome.
 
 ## Procedure

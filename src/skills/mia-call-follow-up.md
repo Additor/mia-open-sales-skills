@@ -11,7 +11,7 @@ Before any draft or change, read assets/ref/shared-writes.md.
 
 ## Purpose
 
-Keep round trips to a minimum. The output is a working document in the chat, in Markdown, not a report. In workspace mode, also save it as `mia-reports/call-follow-up-<company>-<YYYY-MM-DD>.md` and state the path. Email is drafted, never sent.
+Keep round trips to a minimum. The output is a working document in the chat, in Markdown, not a report. In workspace mode, also save it as `mia-reports/mia-call-follow-up-<company>-<YYYY-MM-DD>.md` and state the path. Email is drafted, never sent.
 
 ## Find the call
 

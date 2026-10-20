@@ -5,6 +5,8 @@
 - Two modes. In a coding agent (Claude Code, Codex and others) `mia-pack-setup` and `mia-crm-data-check` write pack files to `mia-pack/` after you confirm, and report skills save to `mia-reports/`. Chat apps keep the download and copy-block flow. Skills read `mia-pack/` first, then attached files, then the `config/` templates.
 - `mia-axes-calibration` no longer stops at a bare refusal below 20 closed deals: 8 to 19 run a directional replay with no proposed edits, and fewer than 8 say what data to bring. Forecast snapshots are saved to `mia-reports/snapshots.jsonl` in workspace mode and read from there.
 - `mia-call-follow-up` saves its document as Markdown instead of offering a report with no layout. `mia-daily-sync` is described as a one-screen page.
+- `mia-pack-setup` no longer writes company names or exact amounts into pack files, for won and lost deals as well as open ones. Found by the new evals.
+- Added `evals/`: five headless end-to-end cases with fictional fixtures (`evals/run.sh`).
 - Install with `npx skills add Additor/mia-open-sales-skills`, plus Codex paths. New `docs/environments.md`.
 
 ## 0.1.0 (2026-10-20)

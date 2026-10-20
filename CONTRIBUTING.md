@@ -44,6 +44,10 @@ Never edit `skills/` by hand. The build script deletes and regenerates it. Commi
 4. Add a row to the skill table in `README.md`.
 5. Bump the version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
 
+## Evals
+
+`evals/run.sh` runs the skills headless on fictional CSV fixtures and checks the files they write (see `evals/README.md`). Run it after changing a skill source. It calls the model, so it costs a few dollars.
+
 ## README images
 
 The images in `docs/images/` render from the HTML in `docs/images/src/` with the Mia night theme tokens. Edit the HTML, then run `docs/images/render.sh` (needs Google Chrome and Node; set `CHROME` to use another browser path). Images encode as mozjpeg at about 100 KB each. Commit the regenerated JPGs.

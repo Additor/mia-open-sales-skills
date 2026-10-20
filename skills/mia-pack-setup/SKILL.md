@@ -13,7 +13,7 @@ Try every source (CRM, calls, email, calendar, chat, signing tool, docs, quotes)
 Read pack files by `##` heading (format in `config/SCHEMA.md`). Look in this order: the `mia-pack/` folder in the working folder, then files attached to or present in the conversation or project, then the `config/` templates, which are defaults and count as seed. Team files outrank personal ones, except voice.md. A file that does not exist is "missing": use defaults and add one closing note that pack setup can create it. A file that exists but is unfilled (`status: seed`, or only template placeholders) is "seed": use defaults for what it lacks, treat its starting values as editable (a seed scoring-axes makes categories "starting values") and add the provisional line.
 
 ### Where files live
-Workspace mode: you can read and write files in the user's working folder (Claude Code, Codex, other coding agents). Chat mode: you cannot (chat apps). Pick the mode from the tools you have. In workspace mode, write pack files to `mia-pack/` only after the person confirms, save each report as `mia-reports/<skill>-<YYYY-MM-DD>.html` (Markdown when the report falls back), and state the paths. Reports can name deals, so say once to keep `mia-reports/` out of version control. In chat mode, give downloads or copy blocks and keep no history.
+Workspace mode: you can read and write files in the user's working folder (Claude Code, Codex, other coding agents). Chat mode: you cannot (chat apps). Pick the mode from the tools you have. In workspace mode, write pack files to `mia-pack/` only after the person confirms, save each report as `mia-reports/<skill name>-<YYYY-MM-DD>.html` (for example `mia-weekly-review-2026-10-20.html`; Markdown when the report falls back), and state the paths. Reports can name deals, so say once to keep `mia-reports/` out of version control. In chat mode, give downloads or copy blocks and keep no history.
 
 ### View and scope
 Role (rep, leader, both) comes from working-style, where the placeholder `<rep | leader | both>` counts as unset. When unset or absent: an explicit scope, what the user said about themselves in this conversation, else the user's email against CRM owners (most open deals: rep; few while others own most: leader; real share of both: both), else ask once, else rep. State the view at the top. For both, "my deals" gives own deals and "team" the team view; offer the other in a line. A leader with no deals gets the team view. Team scope: CRM team data, roles, then owners of deals touched in 90 days; else list owners.
@@ -83,7 +83,7 @@ Ask at most two follow-up questions. Each points at a specific finding, can be a
 
 ## 6. Write the files
 
-Apply the person's corrections. Use real numbers, stage names, and quotes, mark unsupported guesses `(inferred)`, and apply the shared file-hygiene rules to every example. A file should still be true months later. Frontmatter follows `config/SCHEMA.md`: `status: seed`, the template's current version, today's date, and on personal files `person` (the name the user gave in conversation, else "unspecified") and `role`; ask nothing extra for it. Source tags go inline in the body only. Add one Changelog line, "filled from data on <date>". Aggregates over open deals (counts, shares, types) may enter a file; names, amounts and deal-specific details may not.
+Apply the person's corrections. Use real counts, stage names, and quotes (quotes with names and amounts removed), mark unsupported guesses `(inferred)`, and apply the shared file-hygiene rules to every example. A file should still be true months later. Frontmatter follows `config/SCHEMA.md`: `status: seed`, the template's current version, today's date, and on personal files `person` (the name the user gave in conversation, else "unspecified") and `role`; ask nothing extra for it. Source tags go inline in the body only. Add one Changelog line, "filled from data on <date>". Aggregates over open deals (counts, shares, types) may enter a file; names, amounts and deal-specific details may not.
 
 | File | Scope | Notes |
 |---|---|---|
@@ -119,4 +119,4 @@ If a source fails mid-read, retry once, continue with what was read, mark totals
 
 - Only verified lines go in the summary. When unsure, mark `(inferred)` or turn it into one of the two questions. One wrong line in the first minute breaks trust.
 - Questions: the opening one, at most two follow-ups, then the confirmation.
-- Open-deal names, amounts and deal-specific details never enter a file.
+- Company and buyer names never enter a file, for won, lost and open deals alike. Exact amounts and open-deal details never enter either.

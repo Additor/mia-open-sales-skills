@@ -9,4 +9,4 @@ Get approval before changing a CRM or calendar. Show a table with field, current
 Draft emails only; never send. A value never seen (name, link, address, price) gets a visible placeholder such as [link], and one line above the draft says so.
 
 ## Pack files
-A pack file holds no buyer names, companies, exact amounts or open-deal details. Aggregates over open deals (counts, shares, types) may enter.
+A pack file holds no company or buyer names, exact amounts or open-deal details, for won and lost deals as well as open ones. Refer to a deal by type or rank ("the two largest wins", "a 40-seat pilot") and give amounts as ranges. Competitor names are fine. Aggregates over open deals (counts, shares, types) may enter. Before saving, read each file once and remove every company name and exact amount that came from a source.

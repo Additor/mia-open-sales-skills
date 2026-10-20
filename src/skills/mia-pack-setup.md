@@ -50,7 +50,7 @@ Ask at most two follow-up questions. Each points at a specific finding, can be a
 
 ## 6. Write the files
 
-Apply the person's corrections. Use real numbers, stage names, and quotes, mark unsupported guesses `(inferred)`, and apply the shared file-hygiene rules to every example. A file should still be true months later. Frontmatter follows `config/SCHEMA.md`: `status: seed`, the template's current version, today's date, and on personal files `person` (the name the user gave in conversation, else "unspecified") and `role`; ask nothing extra for it. Source tags go inline in the body only. Add one Changelog line, "filled from data on <date>". Aggregates over open deals (counts, shares, types) may enter a file; names, amounts and deal-specific details may not.
+Apply the person's corrections. Use real counts, stage names, and quotes (quotes with names and amounts removed), mark unsupported guesses `(inferred)`, and apply the shared file-hygiene rules to every example. A file should still be true months later. Frontmatter follows `config/SCHEMA.md`: `status: seed`, the template's current version, today's date, and on personal files `person` (the name the user gave in conversation, else "unspecified") and `role`; ask nothing extra for it. Source tags go inline in the body only. Add one Changelog line, "filled from data on <date>". Aggregates over open deals (counts, shares, types) may enter a file; names, amounts and deal-specific details may not.
 
 | File | Scope | Notes |
 |---|---|---|
@@ -86,4 +86,4 @@ If a source fails mid-read, retry once, continue with what was read, mark totals
 
 - Only verified lines go in the summary. When unsure, mark `(inferred)` or turn it into one of the two questions. One wrong line in the first minute breaks trust.
 - Questions: the opening one, at most two follow-ups, then the confirmation.
-- Open-deal names, amounts and deal-specific details never enter a file.
+- Company and buyer names never enter a file, for won, lost and open deals alike. Exact amounts and open-deal details never enter either.

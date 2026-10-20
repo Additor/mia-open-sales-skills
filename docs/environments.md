@@ -9,7 +9,7 @@ The skills run in any AI tool that can load Agent Skills (a folder with a `SKILL
 | Tools | Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot and other coding agents | Claude on the web or desktop, other chat apps |
 | The skill can | Read and write files in your working folder | Read attached files and write only in the chat |
 | Pack files | Written to `mia-pack/` after you confirm | Handed to you as downloads or copy blocks. You keep them in a project or attach them |
-| Reports | Saved as `mia-reports/<skill>-<date>.html` (Markdown when the tool cannot show HTML) | Shown in the chat or as an artifact |
+| Reports | Saved as `mia-reports/<skill name>-<date>.html` (Markdown when the tool cannot show HTML) | Shown in the chat or as an artifact |
 | History | The newest report in `mia-reports/` is the "previous run". Forecast snapshots go to `mia-reports/snapshots.jsonl` | None. Paste a snapshot line to give calibration history |
 
 A skill picks the mode from the tools it has. You do not configure it.

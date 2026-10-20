@@ -146,10 +146,6 @@ To change what a skill itself does or how a report is laid out, edit `src/skills
 - Reports make no network request when they open and contain no tracking links.
 - Reports describe work, not people: no scores, rankings or personal adjectives for reps.
 
-## Contributing
-
-Issues and pull requests are welcome. Setup, repository layout and rules: [CONTRIBUTING.md](CONTRIBUTING.md). Release notes: [CHANGELOG.md](CHANGELOG.md).
-
 ## License
 
 [AGPL-3.0-only](LICENSE). Copyright 2026 Withmia.

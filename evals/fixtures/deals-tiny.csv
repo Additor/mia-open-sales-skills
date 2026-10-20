@@ -1,0 +1,7 @@
+owner,company,stage,status,amount,created_date,close_date,stage_entered_date,next_step,next_step_due,last_activity_date,forecast_category,competitor,champion,economic_buyer_engaged,loss_reason
+Dana Cho,Nettlebed Software,Closed Won,won,18000,2026-03-10,2026-06-12,2026-06-01,,,2026-06-12,Closed,,yes,no,
+Marcus Reid,Orrin Packaging,Closed Won,won,21500,2026-04-11,2026-07-13,2026-07-02,,,2026-07-13,Closed,,yes,yes,
+Dana Cho,Peregrine Surveys,Closed Won,won,25000,2026-05-12,2026-08-14,2026-08-03,,,2026-08-14,Closed,,yes,yes,
+Marcus Reid,Quarry Lane Homes,Closed Lost,lost,15000,2026-03-08,2026-06-05,2026-05-01,,,2026-05-20,Closed,,no,yes,No decision
+Dana Cho,Rookwood Pharma,Closed Lost,lost,19200,2026-04-09,2026-07-06,2026-06-02,,,2026-06-21,Closed,Brightline CRM,yes,no,Lost to competitor
+Marcus Reid,Saltmarsh Brewing,Closed Lost,lost,23400,2026-05-10,2026-08-07,2026-07-03,,,2026-07-22,Closed,Corvid Systems,no,no,Budget
