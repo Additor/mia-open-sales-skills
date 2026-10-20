@@ -1,6 +1,6 @@
 # Config schema
 
-Mia Open Sales Skills read a small set of Markdown files that describe how your team sells. Together they are the pack files: a starting point you own, written in plain text, usable in any AI tool, and ready to carry into Mia later.
+Mia Open Sales Skills read a small set of Markdown files that describe how your team sells. Together they are the pack files: a starting point you own, written in plain text, and usable in any AI tool.
 
 This page defines the format every file follows. A skill can then find what it needs, and a team can review any change the way it reviews code.
 

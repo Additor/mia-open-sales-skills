@@ -2,13 +2,11 @@
 
 <p align="center"><img src="docs/images/hero.jpg" alt="Mia Open Sales Skills: 10 free Claude skills for running a sales team. One set of written criteria for every deal." width="100%"></p>
 
-![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Version: 0.1.0-beta.2](https://img.shields.io/badge/version-0.1.0--beta.2-orange) ![Skills: 10](https://img.shields.io/badge/skills-10-green)
+![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Skills: 10](https://img.shields.io/badge/skills-10-green)
 
 Sales skills that judge every deal by the same written criteria, so your team stops arguing about what "Commit" means.
 
 You keep the criteria as plain Markdown files. Ten skills read them and do the daily and weekly work: briefings, follow-ups, forecasts, risk reviews, CRM checks. Every report names the file versions it used.
-
-> **Beta.** Tested on exported CSV, calendar and call data. Live CRM, email and calendar connectors are still being verified with real teams. Feedback: https://withmia.ai
 
 ## Quick start (10 minutes)
 
@@ -85,7 +83,7 @@ Each skill says what it is not for and which skill to use instead, so a plain re
 
 1. `mia-pack-setup` drafts nine Markdown **pack files** that describe how your team sells: stages, buyers, competitors, scoring criteria, voice, standing rules.
 2. You and your team review and version them like code.
-3. The other skills read those files and end every output with a `Config:` line. Two people with different version numbers know their copies have drifted.
+3. The other skills read those files and end every output with a `Config:` line. Compare those numbers across your team to confirm everyone runs the same files.
 
 Pack files hold type-level descriptions only. They contain no buyer names, no exact amounts and no open-deal details. File list, frontmatter, versioning and precedence rules: [docs/pack-files.md](docs/pack-files.md).
 
@@ -95,10 +93,10 @@ Pack files hold type-level descriptions only. They contain no buyer names, no ex
 |---|---|
 | Claude Code, marketplace | `/plugin marketplace add Additor/mia-open-sales-skills` then `/plugin install mia-open-sales-skills@mia-open-sales-skills` |
 | Claude Code, manual | `git clone https://github.com/Additor/mia-open-sales-skills.git` then `cp -r mia-open-sales-skills/skills/* ~/.claude/skills/` (or `<project>/.claude/skills/`) |
-| Claude on the web or desktop | Zip a folder from `skills/`, for example `skills/mia-daily-sync`, and upload it in Settings under Skills. Install `mia-pack-setup` first |
+| Claude on the web or desktop | Zip a folder from `skills/`, for example `skills/mia-daily-sync`, and upload it as a custom skill. Install `mia-pack-setup` first |
 | Any other AI tool | Paste a skill's `SKILL.md` into the instructions and attach that folder's `config/` and `assets/` files. Each `SKILL.md` stays under 15 KB |
 
-Each folder in `skills/` is self-contained, so you can install one skill or all ten. While the repository is private, Claude Code needs a GitHub login that can read it.
+Each folder in `skills/` is self-contained, so you can install one skill or all ten.
 
 ## Team rollout
 
@@ -128,10 +126,6 @@ Never edit `skills/` by hand. The build regenerates it. Raise the file version a
 - Skills run when you call them and read only the sources you connect.
 - Reports make no network request when they open. A footer may carry one link to the Sales AQ check, with a campaign tag and no deal data, followed only if you click it.
 - Reports describe work, not people: no scores, rankings or personal adjectives for reps.
-
-## Known limits
-
-The free pack cannot force a team onto the same files. Each person holds a copy, and copies drift. The `Config:` line is how you notice. Files also go stale, and reviews run only when someone asks. [Mia](https://withmia.ai) is the hosted option for teams that outgrow the manual routine: one shared source, scheduled runs, and account-level memory.
 
 ## Contributing
 

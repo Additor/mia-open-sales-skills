@@ -25,7 +25,3 @@ A rep who thinks a criterion is wrong does not edit it locally. Send the leader 
 ## What can differ per person
 
 Only voice.md, working-style.md and personal plays. Thresholds, definitions, stages and team rules never differ. If a rep's habit departs from the team process, it belongs in their working style, not in a changed team file.
-
-## Limits
-
-The free pack cannot force everyone onto the same files. Each person holds their own copies, and copies can drift: someone misses a message, keeps an older folder, or tweaks a number to get a result they prefer. The versions printed on every output are how you notice, and noticing depends on people actually checking them. A single shared source with central updates is what a hosted setup provides; Mia is one such option, for teams that outgrow the manual routine.

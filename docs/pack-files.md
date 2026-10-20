@@ -37,4 +37,4 @@ Which skill writes which file:
 
 ## First edit to make
 
-`scoring-axes.md` starts with placeholder thresholds. Replace them with numbers from your own closed deals, then run `mia-axes-calibration` to check them against last quarter.
+`scoring-axes.md` ships with starting thresholds. Set them from your own closed deals, then run `mia-axes-calibration` to check them against last quarter.
