@@ -23,11 +23,11 @@ A single call that just ended belongs to mia-call-follow-up; say so and stop.
 
 ## Step 1: Find the guide
 
-Look for crm-guide.md in the project and read deal-lifecycle (`## Pipelines and stages`, `## Qualification to close`), team-standards (`## Every deal gets`) and scoring-axes (`## Definitions`). With a guide present, go straight to the check. When the CRM has changed since (a field or stage the guide names is missing, or a pipeline has appeared), put a one-line note first and suggest "Refresh my CRM guide". With no guide, build one (Step 2). If a guide was built earlier in this conversation but is not in the project, rebuild it and remind the person once to save it. A scope named in the request wins over the inferred view.
+Look for crm-guide.md in `mia-pack/` or the attached files and read deal-lifecycle (`## Pipelines and stages`, `## Qualification to close`), team-standards (`## Every deal gets`) and scoring-axes (`## Definitions`). With a guide present, go straight to the check. When the CRM has changed since (a field or stage the guide names is missing, or a pipeline has appeared), put a one-line note first and suggest "Refresh my CRM guide". With no guide, build one (Step 2). If a guide was built earlier in this conversation but is not in the project, rebuild it and remind the person once to save it. A scope named in the request wins over the inferred view.
 
 ## Step 2: Build the guide (guide-build run only)
 
-Say in one line that the guide is being built, that it takes a few minutes, and that one confirmation follows. Follow the guide-build reference. Pull as many as 200 deals, meaning open ones along with those closed during the previous 6 months, using aggregate queries instead of reading each record; look at calls and email solely where a stage moved. Ask at most one question in a single confirmation message, save the guide with the `config/crm-guide.md` headings in template order, then go straight to Step 3 in the same turn.
+Say in one line that the guide is being built, that it takes a few minutes, and that one confirmation follows. Follow the guide-build reference. Pull as many as 200 deals, meaning open ones along with those closed during the previous 6 months, using aggregate queries instead of reading each record; look at calls and email solely where a stage moved. Ask at most one question in a single confirmation message, save the guide with the `config/crm-guide.md` headings in template order (in workspace mode, write it to `mia-pack/crm-guide.md` after the confirmation), then go straight to Step 3 in the same turn.
 
 ## Step 3: Check the deals
 

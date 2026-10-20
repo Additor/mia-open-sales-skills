@@ -25,7 +25,7 @@ Other tools: see [Install](#install).
 Set up my pack
 ```
 
-Answer one question, confirm what it found in your CRM, calls and email, and save the files it writes.
+Answer a short opening question and confirm what it found in your CRM, calls and email. In a coding agent it writes the files to `mia-pack/`; in a chat app it hands you downloads to keep in a project.
 
 **3. Run something.** Say:
 
@@ -61,7 +61,7 @@ Each skill says what it is not for and which skill to use instead, so a plain re
 
 **Every day**
 
-- **[mia-daily-sync](skills/mia-daily-sync/SKILL.md)**: One phone-sized page with today's meetings, replies waiting, risks and next moves. *"Start my Daily Sync"*
+- **[mia-daily-sync](skills/mia-daily-sync/SKILL.md)**: One-screen page with today's meetings, replies waiting, risks and next moves. *"Start my Daily Sync"*
 - **[mia-meeting-prep](skills/mia-meeting-prep/SKILL.md)**: A 60-second briefing for one external meeting. *"Meeting prep for Acme"*
 - **[mia-call-follow-up](skills/mia-call-follow-up/SKILL.md)**: Recap email draft, CRM change proposal and dated tasks for the call that just ended. *"Follow up on my last call"*
 - **[mia-next-move](skills/mia-next-move/SKILL.md)**: One specific action and a ready-to-send message for a quiet deal. *"Next move for Acme"*
@@ -89,39 +89,58 @@ Pack files hold type-level descriptions only. They contain no buyer names, no ex
 
 ## Install
 
+For Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot and other coding agents, one command installs into each agent's skill folder:
+
+```
+npx skills add Additor/mia-open-sales-skills
+```
+
 | Where | How |
 |---|---|
-| Claude Code, marketplace | `/plugin marketplace add Additor/mia-open-sales-skills` then `/plugin install mia-open-sales-skills@mia-open-sales-skills` |
-| Claude Code, manual | `git clone https://github.com/Additor/mia-open-sales-skills.git` then `cp -r mia-open-sales-skills/skills/* ~/.claude/skills/` (or `<project>/.claude/skills/`) |
-| Claude on the web or desktop | Zip a folder from `skills/`, for example `skills/mia-daily-sync`, and upload it as a custom skill. Install `mia-pack-setup` first |
-| Any other AI tool | Paste a skill's `SKILL.md` into the instructions and attach that folder's `config/` and `assets/` files. Each `SKILL.md` stays under 15 KB |
+| Claude Code, plugin | `/plugin marketplace add Additor/mia-open-sales-skills` then `/plugin install mia-open-sales-skills@mia-open-sales-skills` |
+| Codex | Copy `skills/*` to `.agents/skills/` (repository) or `~/.agents/skills/` (user) |
+| Claude Code, manual | Copy `skills/*` to `.claude/skills/` or `~/.claude/skills/` |
+| Claude on the web or desktop | Zip a folder from `skills/` and upload it as a custom skill. Install `mia-pack-setup` first |
+| Any other AI tool | Paste a skill's `SKILL.md` into the instructions and attach that folder's `config/` and `assets/` files |
 
 Each folder in `skills/` is self-contained, so you can install one skill or all ten.
+
+### Where your files go
+
+| | Coding agents (workspace mode) | Chat apps (chat mode) |
+|---|---|---|
+| Pack files | `mia-pack/` in your project, written after you confirm | Downloads or copy blocks. Keep them in a project or attach them |
+| Reports | `mia-reports/`, one file per run | Shown in the chat or as an artifact |
+
+Skills read `mia-pack/` first, then attached files, then the built-in templates. Details and per-tool paths: [docs/environments.md](docs/environments.md).
 
 ## Team rollout
 
 1. The leader runs `mia-pack-setup`, reads the six team files, fixes them, and sets `status: reviewed`.
 2. The leader shares them as one `team-pack` folder and posts the current version of each file.
-3. Each rep adds the folder beside their own files and runs `mia-pack-setup`, which builds only their voice and working style.
+3. Each rep adds the files to `mia-pack/` and runs `mia-pack-setup`, which builds only their voice and working style.
 4. A rep who disagrees with a criterion sends the leader the file, the reason and the deals affected. Team files are never edited locally.
 
 Full procedure: [config/TEAM-ROLLOUT.md](config/TEAM-ROLLOUT.md).
 
 ## Customize
 
+Edit the pack files that setup created in `mia-pack/`:
+
 | To change | Edit |
 |---|---|
-| Thresholds, categories, risk signals | `config/scoring-axes.md` |
-| Stages and entry conditions | `config/deal-lifecycle.md` |
-| Team rules and weekly review items | `config/team-standards.md` |
-| How drafts sound | `config/voice.md` |
-| What a skill does, or a report layout | `src/skills/<name>.md`, then `python3 scripts/build.py` |
+| Thresholds, categories, risk signals | `mia-pack/scoring-axes.md` |
+| Stages and entry conditions | `mia-pack/deal-lifecycle.md` |
+| Team rules and weekly review items | `mia-pack/team-standards.md` |
+| How drafts sound | `mia-pack/voice.md` |
 
-Never edit `skills/` by hand. The build regenerates it. Raise the file version and add a Changelog line with each pack file edit.
+Raise the file version and add a Changelog line with each edit. The `config/` folder in this repository holds the templates those files start from.
+
+To change what a skill itself does or how a report is laid out, edit `src/skills/<name>.md` in a fork and run `python3 scripts/build.py`. The build regenerates `skills/`, so never edit that folder by hand.
 
 ## Safety and privacy
 
-- Report skills are read-only. They never send, post or write to your CRM.
+- Report skills are read-only toward your tools. They never send, post or write to your CRM, and in a coding agent they write only to `mia-pack/` and `mia-reports/`.
 - Skills that propose changes (`mia-call-follow-up`, `mia-crm-data-check`) wait for your explicit approval.
 - Skills run when you call them and read only the sources you connect.
 - Reports make no network request when they open and contain no tracking links.

@@ -10,7 +10,10 @@ description: Builds the starter pack files (deal lifecycle, buyers and competiti
 ### Sources and pack files
 Try every source (CRM, calls, email, calendar, chat, signing tool, docs, quotes) and name those that answered. Buyer chat is deal activity; check pending contracts' signing status. A CSV standing in for a CRM follows `assets/ref/shared-csv-as-crm.md`.
 
-Read pack files (`config/`, format in SCHEMA.md) by `##` heading; defaults are the templates there. Team files outrank personal ones, except voice.md. A file that does not exist is "missing": use defaults and add one closing note that pack setup can create it. A file that exists but is unfilled (`status: seed`, or only template placeholders) is "seed": use defaults for what it lacks, treat its starting values as editable (a seed scoring-axes makes categories "starting values") and add the provisional line.
+Read pack files by `##` heading (format in `config/SCHEMA.md`). Look in this order: the `mia-pack/` folder in the working folder, then files attached to or present in the conversation or project, then the `config/` templates, which are defaults and count as seed. Team files outrank personal ones, except voice.md. A file that does not exist is "missing": use defaults and add one closing note that pack setup can create it. A file that exists but is unfilled (`status: seed`, or only template placeholders) is "seed": use defaults for what it lacks, treat its starting values as editable (a seed scoring-axes makes categories "starting values") and add the provisional line.
+
+### Where files live
+Workspace mode: you can read and write files in the user's working folder (Claude Code, Codex, other coding agents). Chat mode: you cannot (chat apps). Pick the mode from the tools you have. In workspace mode, write pack files to `mia-pack/` only after the person confirms, save each report as `mia-reports/<skill>-<YYYY-MM-DD>.html` (Markdown when the report falls back), and state the paths. Reports can name deals, so say once to keep `mia-reports/` out of version control. In chat mode, give downloads or copy blocks and keep no history.
 
 ### View and scope
 Role (rep, leader, both) comes from working-style, where the placeholder `<rep | leader | both>` counts as unset. When unset or absent: an explicit scope, what the user said about themselves in this conversation, else the user's email against CRM owners (most open deals: rep; few while others own most: leader; real share of both: both), else ask once, else rep. State the view at the top. For both, "my deals" gives own deals and "team" the team view; offer the other in a line. A leader with no deals gets the team view. Team scope: CRM team data, roles, then owners of deals touched in 90 days; else list owners.
@@ -39,7 +42,7 @@ Skills that write or draft also read assets/ref/shared-writes.md.
 
 Before any file is written or draft made, read assets/ref/shared-writes.md.
 
-This skill is read-only. It writes nothing to a CRM, sends nothing, and reads no pack file except to detect existing team files; `config/` templates are copied, not read as the team's pack. The person answers the opening question, at most two follow-up questions, and the confirmation, then saves the files. The opening question does not count toward the two, and the confirmation line is not a question. The reply may span several messages (summary, save, hand-off, offer); the shared one-screen limit does not apply. Anything unknown becomes an `(inferred)` mark or the words "not seen" inside a file, never an extra question in chat.
+This skill is read-only toward your sources. It writes nothing to a CRM and sends nothing; in workspace mode its only writes are the pack files in `mia-pack/`. It reads no pack file except to detect existing team files; `config/` templates are copied, not read as the team's pack. The person answers the opening question, at most two follow-up questions, and the confirmation, then saves the files. The opening question does not count toward the two, and the confirmation line is not a question. The reply may span several messages (summary, save, hand-off, offer); the shared one-screen limit does not apply. Anything unknown becomes an `(inferred)` mark or the words "not seen" inside a file, never an extra question in chat.
 
 Read these reference files when the step calls for them: `assets/ref/mia-pack-setup-extraction.md` (what to pull from each source), `assets/ref/mia-pack-setup-summary.md` (how to compose the summary and the files), `assets/ref/mia-pack-setup-situations.md` (thin data, missing sources, existing team files, saving, founder handoff, refresh).
 
@@ -97,7 +100,7 @@ Do not create crm-guide. Say that the first run of mia-crm-data-check builds it,
 
 ## 7. Tell them where to save
 
-Follow the saving section of the situations reference. Say once, in one line, that unsaved files mean the next run starts from a seed again. For a leader, the same message also covers the team pack bundle and the rep message, per that section.
+Follow the saving section of the situations reference. In workspace mode, say where the files now live. In chat mode, say once, in one line, that unsaved files mean the next run starts from a seed again. For a leader, the same message also covers the team pack bundle and the rep message, per that section.
 
 ## 8. Make one offer
 

@@ -9,4 +9,4 @@ No CRM: read an attached or pasted CSV as the CRM (see `assets/ref/shared-csv-as
 When the user asks about one deal ("Is Brightwell really Commit?"), skip the report and answer in chat: CRM category, Evidence category and date, gates passed, signals active, what the buyer has not yet done, the evidence lines. Close by offering the full forecast.
 
 ## Snapshot
-The last item of "How the forecast works" carries, in `evidence`, one compact machine-readable line (deal identifiers, categories, dates, config versions) that the user can keep for mia-axes-calibration. Never claim it was saved anywhere.
+The last item of "How the forecast works" carries, in `evidence`, one compact machine-readable line (deal identifiers, categories, dates, config versions, no buyer names) for mia-axes-calibration. In workspace mode, append that line to `mia-reports/snapshots.jsonl` (one JSON object per line) and say so. In chat mode, say the line is shown for the user to keep and was not saved.

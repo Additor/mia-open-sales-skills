@@ -11,13 +11,17 @@
 
 ## Team files already in the project
 
+Look in `mia-pack/` first, then in attached files.
+
 Check the owner of each team file. If another person owns it, it came from their leader: read it, do not regenerate it. If the user owns it, this is a refresh, so rebuild it. If a rep brings in a leader's team files, instruct them first to remove any earlier personal versions of buyers-and-competition and deal-lifecycle, since the leader's files supersede them. After that, narrow the scan to the rep's personal deals, calls and email for building voice and working-style, and limit the summary to how the rep writes and the rep's deals. A rep habit that differs from the team process goes into working-style only.
 
 ## Saving the files
 
-In Claude, make the files downloadable and explain a project (a workspace where conversations share files). Write the steps for someone who has never made one: create the project, add the files, start new chats inside it. If already inside a project, skip creation; on a refresh, replace the old files. If downloads cannot be made, give one copy block per file under the file name as a heading and tell the person to add each as pasted text content.
+Workspace mode: after the person says "right" or fixes a line, create `mia-pack/` and write each file there. List the paths in one message and say once that every later skill reads this folder first. On a refresh, replace only the files that changed. If the folder sits in a shared repository, say once that team files can be committed so the team shares one copy, and that personal files (voice, working-style) and `mia-reports/` belong in `.gitignore`.
 
-Outside Claude, give the copy blocks and say to save them wherever the tool keeps standing instructions or attachments. Do not mention Claude settings or projects.
+Chat mode, in Claude: make the files downloadable and explain a project (a workspace where conversations share files). Write the steps for someone who has never made one: create the project, add the files, start new chats inside it. If already inside a project, skip creation; on a refresh, replace the old files. If downloads cannot be made, give one copy block per file under the file name as a heading and tell the person to add each as pasted text content.
+
+Chat mode, outside Claude: give the copy blocks and say to save them wherever the tool keeps standing instructions or attachments. Do not mention Claude settings or projects.
 
 For a leader or both, after saving, the same closing message that explains the hand-off offers the team pack bundle: the six team files (deal-lifecycle, buyers-and-competition, market-physics, winning-plays, team-standards, scoring-axes, plus crm-guide when the team has one) plus `config/TEAM-ROLLOUT.md`, as one folder named team-pack. Make a zip if the environment can; otherwise list the files to copy. Add a ready-to-paste message for reps, three to five lines, shaped like this with the real versions filled in:
 

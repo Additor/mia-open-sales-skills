@@ -9,15 +9,19 @@ description: Replays the criteria in scoring-axes.md on closed deals, using evid
 
 Before step 1, read assets/ref/shared-reports.md.
 
-This skill is read-only. It proposes edits to scoring-axes.md and changes nothing. The file changes only when the person approves a diff and saves it themselves. Run it after a quarter closes or before changing the criteria. Read `assets/schemas/mia-axes-calibration.md` for the report layout.
+This skill is read-only. It proposes edits to scoring-axes.md and changes nothing until the person approves a diff. In workspace mode it then writes the edited file to `mia-pack/scoring-axes.md` with the version bump and the Changelog line; in chat mode the person saves the file themselves. Run it after a quarter closes or before changing the criteria. Read `assets/schemas/mia-axes-calibration.md` for the report layout.
 
-## Limits to state
+## Where history comes from
 
-A skill cannot write into a Claude project's files, so there is no automatic ledger of past runs. Say this plainly. If the person has saved snapshot blocks from earlier mia-forecast or mia-weekly-review runs, use them in place of reconstruction.
+Snapshot lines come from earlier mia-forecast runs. In workspace mode mia-forecast appends them to `mia-reports/snapshots.jsonl`: read that file first. In chat mode nothing is stored, so use snapshot lines the person pastes and say plainly that none are kept. Without snapshots, reconstruct.
 
 ## Sample gate
 
-Minimum: 20 closed deals, with at least 5 won and 5 lost. Read at most 100, most recent first, within the view and scope set by the shared rules (a leader reads the team's deals, a rep their own). Below the minimum, draw no conclusion: say how many more closed deals are needed (and of which outcome) and stop. Do not build the report.
+Full run: 20 closed deals with at least 5 won and 5 lost. Read at most 100, most recent first, within the view and scope set by the shared rules (a leader reads the team's deals, a rep their own). Below that, never end on a bare refusal:
+
+- A personal scope below the minimum: say how many closed deals it holds and offer the team scope or a pasted team CSV.
+- 8 to 19 closed deals, or fewer than 5 of one outcome: run a directional replay. Build the report with the replay and the Signals, leave Proposed edits on its empty text, and say how many more closed deals, and of which outcome, a full run needs.
+- Fewer than 8 closed deals: build no report. Say how many more are needed and what to bring: a CSV of closed deals from the past 12 months with stage, amount, created date, close date and outcome.
 
 ## Procedure
 
@@ -42,12 +46,12 @@ When closed-deal data holds only lifetime summaries with no dates (a CSV export,
 
 - Classify from evidence dated at least 30 days before the close, except in a lifetime replay. Never use anything learned after that point.
 - Every edit is backed by a deal count.
-- The file does not change until the person approves and saves it.
+- The file does not change until the person approves the diff.
 - Saved files never receive buyer details; the report may name deals.
 
 ## Report
 
-Sections, in fixed order: Replay summary; Where the criteria disagreed with outcomes; Signals; Proposed edits; What this run cannot conclude. Header numbers: closed deals analyzed, won, lost, how many came from snapshots, and how many were reconstructed. If snapshots and reconstruction were mixed, name which deals used which in `howBuilt`. When approved edits are saved, tell the person to add one line to the Changelog in scoring-axes.md and raise the version as stated.
+Sections, in fixed order: Replay summary; Where the criteria disagreed with outcomes; Signals; Proposed edits; What this run cannot conclude. Header numbers: closed deals analyzed, won, lost, how many came from snapshots, and how many were reconstructed. If snapshots and reconstruction were mixed, name which deals used which in `howBuilt`. In chat mode, when approved edits are saved, tell the person to add one line to the Changelog in scoring-axes.md and raise the version as stated.
 
 ## Chat reply
 
@@ -55,7 +59,7 @@ Layout: how many closed deals were analyzed and the split by outcome; the single
 
 ## Special cases
 
-- Fewer than 20 closed deals, or fewer than 5 of either outcome: stop as described above.
+- Fewer than 20 closed deals, or fewer than 5 of either outcome: follow the sample gate tiers above.
 - No call or email history: activity will be thin and most deals will fall into Pipeline. Say so and mark conclusions weak.
 - Lost deals with no loss reason: say so once, in the report's limits section.
 - Mixed snapshot and reconstruction: record in `howBuilt` which deals used which.

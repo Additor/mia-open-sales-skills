@@ -10,7 +10,10 @@ description: Turns one sales call that just ended into a follow-up email draft, 
 ### Sources and pack files
 Try every source (CRM, calls, email, calendar, chat, signing tool, docs, quotes) and name those that answered. Buyer chat is deal activity; check pending contracts' signing status. A CSV standing in for a CRM follows `assets/ref/shared-csv-as-crm.md`.
 
-Read pack files (`config/`, format in SCHEMA.md) by `##` heading; defaults are the templates there. Team files outrank personal ones, except voice.md. A file that does not exist is "missing": use defaults and add one closing note that pack setup can create it. A file that exists but is unfilled (`status: seed`, or only template placeholders) is "seed": use defaults for what it lacks, treat its starting values as editable (a seed scoring-axes makes categories "starting values") and add the provisional line.
+Read pack files by `##` heading (format in `config/SCHEMA.md`). Look in this order: the `mia-pack/` folder in the working folder, then files attached to or present in the conversation or project, then the `config/` templates, which are defaults and count as seed. Team files outrank personal ones, except voice.md. A file that does not exist is "missing": use defaults and add one closing note that pack setup can create it. A file that exists but is unfilled (`status: seed`, or only template placeholders) is "seed": use defaults for what it lacks, treat its starting values as editable (a seed scoring-axes makes categories "starting values") and add the provisional line.
+
+### Where files live
+Workspace mode: you can read and write files in the user's working folder (Claude Code, Codex, other coding agents). Chat mode: you cannot (chat apps). Pick the mode from the tools you have. In workspace mode, write pack files to `mia-pack/` only after the person confirms, save each report as `mia-reports/<skill>-<YYYY-MM-DD>.html` (Markdown when the report falls back), and state the paths. Reports can name deals, so say once to keep `mia-reports/` out of version control. In chat mode, give downloads or copy blocks and keep no history.
 
 ### View and scope
 Role (rep, leader, both) comes from working-style, where the placeholder `<rep | leader | both>` counts as unset. When unset or absent: an explicit scope, what the user said about themselves in this conversation, else the user's email against CRM owners (most open deals: rep; few while others own most: leader; real share of both: both), else ask once, else rep. State the view at the top. For both, "my deals" gives own deals and "team" the team view; offer the other in a line. A leader with no deals gets the team view. Team scope: CRM team data, roles, then owners of deals touched in 90 days; else list owners.
@@ -37,11 +40,11 @@ Facts and next actions only; no encouragement, no emojis. Every flag gets a reas
 Report skills also read assets/ref/shared-reports.md.
 Skills that write or draft also read assets/ref/shared-writes.md.
 
-Before any draft or change, read assets/ref/shared-writes.md. If the follow-up is also kept as a report, read assets/ref/shared-reports.md before building it.
+Before any draft or change, read assets/ref/shared-writes.md.
 
 ## Purpose
 
-Keep round trips to a minimum. The output is a working document in the chat, in Markdown, not a report. If the user wants to keep it, also build it as a report using the same sections in the same order. Email is drafted, never sent.
+Keep round trips to a minimum. The output is a working document in the chat, in Markdown, not a report. In workspace mode, also save it as `mia-reports/call-follow-up-<company>-<YYYY-MM-DD>.md` and state the path. Email is drafted, never sent.
 
 ## Find the call
 

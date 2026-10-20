@@ -75,8 +75,8 @@ One row per rep, largest gap between CRM commit and Evidence commit first. Empty
 Plain-language items, one per rule (default `empty`: "The rules could not be read from scoring-axes."), so anyone can check a label: the three categories and their gates, the two flags, how the Evidence date is set, and what counts as evidence. The last item carries the snapshot.
 - headline: the rule's name ("Commit", "Slip", "Snapshot")
 - detail: the rule in plain words, taken from scoring-axes
-- evidence (snapshot item only): one compact machine-readable line of deal identifiers, categories, dates and config versions, with a note that nothing has been saved anywhere
+- evidence (snapshot item only): one compact machine-readable line of deal identifiers, categories, dates and config versions, with a note that it was appended to `mia-reports/snapshots.jsonl` (workspace mode) or was not saved (chat mode)
 
 ```json
-{ "headline": "Snapshot", "detail": "Optional line to keep for mia-axes-calibration; nothing has been saved.", "evidence": ["{\"period\":\"Q4\",\"config\":{\"scoring-axes\":\"0.1.1\"},\"deals\":[{\"id\":\"d-104\",\"crm\":\"Commit\",\"evidence\":\"Best Case\",\"date\":\"2026-12-04\"}]}"] }
+{ "headline": "Snapshot", "detail": "Line for mia-axes-calibration; appended to mia-reports/snapshots.jsonl.", "evidence": ["{\"period\":\"Q4\",\"config\":{\"scoring-axes\":\"0.1.1\"},\"deals\":[{\"id\":\"d-104\",\"crm\":\"Commit\",\"evidence\":\"Best Case\",\"date\":\"2026-12-04\"}]}"] }
 ```

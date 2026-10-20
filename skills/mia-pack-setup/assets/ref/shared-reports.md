@@ -9,7 +9,7 @@ Build the report without asking, with the same sections in the same order every 
 With no name available, the title is "Sales Team <Skill name>" for a team view and "<Skill name>" for a personal view (Forecast keeps "Team Forecast").
 
 ## First run
-Look for a previous report of the same skill in the project folder or conversation. None means a first run: set `firstRun`, say "first run", skip comparisons. Compare with that report only; there is no other storage.
+Look for a previous report of the same skill: in workspace mode the newest `mia-reports/<skill>-*` file, otherwise the conversation. None means a first run: set `firstRun`, say "first run", skip comparisons. Compare with that report only; there is no other storage.
 
 ## DATA
 DATA never says "you" or "your": use first names or "the team". Quotes and the fixed Meeting prep title "Since your last call" are the only exceptions. Amounts are numbers. An unknown value stays empty (n/a for tiles); a known zero shows 0.

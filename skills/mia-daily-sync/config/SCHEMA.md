@@ -18,6 +18,10 @@ This page defines the format every file follows. A skill can then find what it n
 | voice.md | personal | How one person writes to buyers |
 | working-style.md | personal | A person's role, best-deal moves, standing rules, and recurring slips |
 
+## Where files live
+
+Workspace mode (Claude Code, Codex and other coding agents): `mia-pack/` in the working folder holds the pack files, and `mia-reports/` holds saved reports and forecast snapshots. Chat mode: attach the files or keep them in a project, because the chat has no folder. Skills read `mia-pack/` first, then attached files, then the `config/` templates as seed defaults.
+
 ## Frontmatter
 
 Every file starts with this block.

@@ -9,7 +9,7 @@ description: Builds the starter pack files (deal lifecycle, buyers and competiti
 
 Before any file is written or draft made, read assets/ref/shared-writes.md.
 
-This skill is read-only. It writes nothing to a CRM, sends nothing, and reads no pack file except to detect existing team files; `config/` templates are copied, not read as the team's pack. The person answers the opening question, at most two follow-up questions, and the confirmation, then saves the files. The opening question does not count toward the two, and the confirmation line is not a question. The reply may span several messages (summary, save, hand-off, offer); the shared one-screen limit does not apply. Anything unknown becomes an `(inferred)` mark or the words "not seen" inside a file, never an extra question in chat.
+This skill is read-only toward your sources. It writes nothing to a CRM and sends nothing; in workspace mode its only writes are the pack files in `mia-pack/`. It reads no pack file except to detect existing team files; `config/` templates are copied, not read as the team's pack. The person answers the opening question, at most two follow-up questions, and the confirmation, then saves the files. The opening question does not count toward the two, and the confirmation line is not a question. The reply may span several messages (summary, save, hand-off, offer); the shared one-screen limit does not apply. Anything unknown becomes an `(inferred)` mark or the words "not seen" inside a file, never an extra question in chat.
 
 Read these reference files when the step calls for them: `assets/ref/mia-pack-setup-extraction.md` (what to pull from each source), `assets/ref/mia-pack-setup-summary.md` (how to compose the summary and the files), `assets/ref/mia-pack-setup-situations.md` (thin data, missing sources, existing team files, saving, founder handoff, refresh).
 
@@ -67,7 +67,7 @@ Do not create crm-guide. Say that the first run of mia-crm-data-check builds it,
 
 ## 7. Tell them where to save
 
-Follow the saving section of the situations reference. Say once, in one line, that unsaved files mean the next run starts from a seed again. For a leader, the same message also covers the team pack bundle and the rep message, per that section.
+Follow the saving section of the situations reference. In workspace mode, say where the files now live. In chat mode, say once, in one line, that unsaved files mean the next run starts from a seed again. For a leader, the same message also covers the team pack bundle and the rep message, per that section.
 
 ## 8. Make one offer
 

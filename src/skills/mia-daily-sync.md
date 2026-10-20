@@ -1,6 +1,6 @@
 ---
 name: mia-daily-sync
-description: Builds a short start-of-day page for a phone, covering today's sales meetings, replies waiting, deals at risk, and the next moves worth making. Not for one meeting in depth (use mia-meeting-prep) or one quiet deal (use mia-next-move); try "Start my Daily Sync", "What should I do today?", or "Morning rundown".
+description: Builds a one-screen start-of-day page covering today's sales meetings, replies waiting, deals at risk, and the next moves worth making. Not for one meeting in depth (use mia-meeting-prep) or one quiet deal (use mia-next-move); try "Start my Daily Sync", "What should I do today?", or "Morning rundown".
 ---
 
 # Daily Sync

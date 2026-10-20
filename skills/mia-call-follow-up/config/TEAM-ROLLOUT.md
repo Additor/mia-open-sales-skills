@@ -6,11 +6,11 @@ How a team shares one set of pack files and keeps them in step.
 
 Run mia-pack-setup on your own data. It writes the six team files: deal-lifecycle, buyers-and-competition, market-physics, winning-plays, team-standards and scoring-axes. Read each one and fix what is wrong, because the reps will inherit every threshold and definition you leave in. When a file reads true, set `status: reviewed` and raise its version.
 
-Then save the team pack bundle: those six files plus this page, in one folder named team-pack (or a zip). Share it with each rep through whatever your team already uses, whether chat, email or a shared drive, as that single folder or zip, never as loose files. Finish with one message that tells reps the current version of each file, so everyone has a number to compare against.
+Then save the team pack bundle: those six files plus this page, in one folder named team-pack (or a zip). If your team works in a shared repository, commit the team files under `mia-pack/` and skip the bundle: reps pull them. Otherwise share it with each rep through whatever your team already uses, whether chat, email or a shared drive, as that single folder or zip, never as loose files. Finish with one message that tells reps the current version of each file, so everyone has a number to compare against.
 
 ## For each rep
 
-Put the team files in the same place as your own pack files, and do not edit them. Then run mia-pack-setup. It sees the team files and builds only your voice and your working style from your own deals and email.
+Put the team files in your `mia-pack/` folder (or wherever your tool keeps pack files), and do not edit them. Then run mia-pack-setup. It sees the team files and builds only your voice and your working style from your own deals and email.
 
 Until the leader has marked the team files reviewed, your first results carry a provisional label. That is expected, and it goes away once the files change from seed to reviewed.
 

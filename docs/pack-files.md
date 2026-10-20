@@ -1,6 +1,6 @@
 # Pack files
 
-Nine Markdown files in `config/` describe how your team sells. `mia-pack-setup` drafts them. You review and own them. The formal schema is in [config/SCHEMA.md](../config/SCHEMA.md).
+Nine Markdown files in `config/` describe how your team sells. `mia-pack-setup` drafts them. You review and own them. The formal schema is in [config/SCHEMA.md](../config/SCHEMA.md). Where the files live in each tool is in [environments.md](environments.md).
 
 ## The files
 

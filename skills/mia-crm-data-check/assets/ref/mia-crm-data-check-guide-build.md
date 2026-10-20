@@ -36,4 +36,4 @@ Use the template headings in order: Pipelines in scope, Fields by moment, Requir
 
 Keep it general and durable: field names, stage names, timing, rules. No deals, buyers, companies, or amounts beyond ranges. It says how the CRM is used, not what it contains today. Frontmatter per `config/SCHEMA.md`, `status: seed`.
 
-Provide the saving instructions a single time, placed in the first report's own message. If a download cannot be made, give a copy block titled crm-guide.md. Outside Claude, say to save it wherever the tool keeps attachments. Note for a leader, in one line, that reps may keep a copy of this file in their own space so all treat the CRM uniformly.
+In workspace mode the guide is written to `mia-pack/crm-guide.md`; say the path in the first report's message. In chat mode, provide the saving instructions a single time, placed in the first report's own message. If a download cannot be made, give a copy block titled crm-guide.md. Outside Claude, say to save it wherever the tool keeps attachments. Note for a leader, in one line, that reps may keep a copy of this file in their own space so all treat the CRM uniformly.
