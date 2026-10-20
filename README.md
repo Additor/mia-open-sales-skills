@@ -2,208 +2,143 @@
 
 ![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Version: 0.1.0-beta.2](https://img.shields.io/badge/version-0.1.0--beta.2-orange) ![Skills: 10](https://img.shields.io/badge/skills-10-green)
 
-Ten free, open-source AI skills that let a sales team judge every deal by the same written criteria.
+Sales skills that judge every deal by the same written criteria, so your team stops arguing about what "Commit" means.
 
-You keep the criteria as plain Markdown files, edit them as your process changes, and every report prints the file versions it used. The skills run in Claude and in any AI tool that can read files.
+You keep the criteria as plain Markdown files. Ten skills read them and do the daily and weekly work: briefings, follow-ups, forecasts, risk reviews, CRM checks. Every report names the file versions it used.
 
-> **Status: 0.1.0-beta.2.** Tested on exported CSV, calendar and call data. Live connector paths (CRM, email, calendar) and marketplace install are still being verified with real teams. Send feedback to the Withmia team via https://withmia.ai.
+> **Beta.** Tested on exported CSV, calendar and call data. Live CRM, email and calendar connectors are still being verified with real teams. Feedback: https://withmia.ai
 
-## Contents
+## Quick start (10 minutes)
 
-- [What this is](#what-this-is)
-- [Quick start](#quick-start)
-- [Install](#install)
-- [The ten skills](#the-ten-skills)
-- [How the pack files work](#how-the-pack-files-work)
-- [Team rollout](#team-rollout)
-- [Customizing](#customizing)
-- [Repository layout](#repository-layout)
-- [Privacy](#privacy)
-- [Limits of the beta](#limits-of-the-beta)
-- [Contributing](#contributing)
-- [License](#license)
-
-## What this is
-
-Most teams judge deals by gut feel, and each rep uses a different bar. A deal one rep calls Commit looks like Best Case to the next rep. Forecast calls turn into arguments about definitions.
-
-This pack fixes the definitions first, then runs the daily and weekly sales work against them.
-
-1. **Pack files** in `config/` describe how your team sells: stages, buyers, competitors, scoring criteria, voice, standing rules. A setup skill drafts them from your CRM, call recordings, and inbox.
-2. **Ten skills** read those files and do the work: morning briefing, meeting prep, call follow-up, forecast, at-risk review, CRM hygiene, and more.
-3. **Every output ends with a `Config:` line** that lists the files and versions used. Two people with different numbers know their files have drifted.
-
-The pack files are type-level descriptions. They hold no buyer names, no exact amounts, and no details of open deals.
-
-## Quick start
-
-1. [Install the pack](#install).
-2. Say **"Set up my pack"**. Answer one question, confirm what it found, and save the files it creates.
-3. Say **"Start my Daily Sync"** or **"Open my Weekly Review"**.
-
-The first results carry a *provisional* label, because the pack files are still starting points drafted from data. If you lead a team, read each file, fix what is wrong, set `status: reviewed`, and share the files with your reps (see [Team rollout](#team-rollout)).
-
-You do not need a CRM connection to try it. Attach or paste a CSV export of your deals and the skills treat it as the CRM (`assets/ref/shared-csv-as-crm.md`).
-
-## Install
-
-### Claude Code (plugin marketplace)
+**1. Install**
 
 ```
 /plugin marketplace add Additor/mia-open-sales-skills
 /plugin install mia-open-sales-skills@mia-open-sales-skills
 ```
 
-While the repository is private, Claude Code needs a GitHub login that can read it.
+Other tools: see [Install](#install).
 
-### Claude Code (manual copy)
+**2. Set up your pack.** Say:
 
-Each folder in `skills/` is self-contained, with its own `config/` and `assets/`. Copy the ones you want:
-
-```bash
-git clone https://github.com/Additor/mia-open-sales-skills.git
-cp -r mia-open-sales-skills/skills/* ~/.claude/skills/      # all users
-# or: cp -r mia-open-sales-skills/skills/* <your-project>/.claude/skills/   # one project
+```
+Set up my pack
 ```
 
-### Claude on the web or desktop
+Answer one question, confirm what it found in your CRM, calls and email, and save the files it writes.
 
-Zip a folder from `skills/` (for example `skills/mia-daily-sync`) and upload it under Settings, Capabilities, Skills. Repeat for each skill you want. Install `mia-pack-setup` first.
+**3. Run something.** Say:
 
-### Any other AI tool
+```
+Start my Daily Sync
+```
 
-Paste a skill's `SKILL.md` into the tool's instructions and attach the files from that skill folder's `config/` and `assets/`. A SKILL.md is up to 15 KB, so pick a tool that accepts long instructions or file uploads.
+The first results carry a *provisional* label, because the pack files are drafts built from data. A leader reads them, fixes what is wrong, sets `status: reviewed`, and shares them with the team.
 
-## The ten skills
+No CRM connection yet? Attach a CSV export of your deals and the skills treat it as the CRM.
 
-| Skill | Say | What you get |
-|---|---|---|
-| [mia-pack-setup](skills/mia-pack-setup/SKILL.md) | "Set up my pack" | Starter pack files drafted from your CRM, calls, and email |
-| [mia-daily-sync](skills/mia-daily-sync/SKILL.md) | "Start my Daily Sync" | One phone-sized page: today's meetings, replies waiting, risks, next moves |
-| [mia-meeting-prep](skills/mia-meeting-prep/SKILL.md) | "Meeting prep for Acme" | A 60-second briefing for one external meeting |
-| [mia-call-follow-up](skills/mia-call-follow-up/SKILL.md) | "Follow up on my last call" | Recap email draft, CRM change proposal, and dated tasks. CRM writes wait for your approval |
-| [mia-next-move](skills/mia-next-move/SKILL.md) | "Next move for Acme" | One specific action and a message ready to send for a quiet deal, or a ranked scan of the pipeline |
-| [mia-weekly-review](skills/mia-weekly-review/SKILL.md) | "Open my Weekly Review" | Every open deal on one page: what moved, what is at risk, what closes. Leaders also get a Team sweep and Coach's questions |
-| [mia-forecast](skills/mia-forecast/SKILL.md) | "Show my forecast" | Commit, Best Case, and Pipeline sorted from buyer evidence, set beside the CRM commit |
-| [mia-at-risk-review](skills/mia-at-risk-review/SKILL.md) | "Show deals at risk" | Winnable deals that drifted from your own process, with a dollar figure on the gaps |
-| [mia-crm-data-check](skills/mia-crm-data-check/SKILL.md) | "Check my CRM data" | Learns how your team uses the CRM, checks open deals against that guide, and prepares fixes for approval |
-| [mia-axes-calibration](skills/mia-axes-calibration/SKILL.md) | "Calibrate my axes" | Replays your scoring criteria on closed deals and proposes edits where the criteria and the outcomes disagree |
+## Why this exists
 
-Each skill states what it is not for and which skill to use instead, so the right one triggers from a plain request.
-
-### Which skill, when
-
-| Moment | Skill |
+| Problem | What the pack does |
 |---|---|
-| First day, or after your process changes | mia-pack-setup |
-| Start of the working day | mia-daily-sync |
-| Before a buyer meeting | mia-meeting-prep |
-| Right after a call | mia-call-follow-up |
-| A deal went quiet | mia-next-move |
-| Monday pipeline review or 1:1 | mia-weekly-review |
-| Forecast call | mia-forecast |
-| Looking for leaks in the pipeline | mia-at-risk-review |
-| Messy CRM | mia-crm-data-check |
-| Once a quarter | mia-axes-calibration |
+| One rep's Commit is another rep's Best Case | One `scoring-axes.md` defines Commit, Best Case, Pipeline, and the risk signals |
+| Forecast calls turn into arguments about definitions | Every report applies the same definitions and prints their versions |
+| Process lives in a leader's head | `deal-lifecycle.md` and `team-standards.md` write it down, in plain text you can diff |
+| Reports sound confident and cite nothing | Every fact carries a source and a date. Unchecked claims read "unconfirmed" |
+| Tools lock you in | The pack is Markdown. It runs in Claude and in any AI tool that reads files |
 
-### Safety defaults
+## Skills
 
-- Report skills are read-only. They do not send email, post messages, or write to the CRM.
-- Skills that propose changes (`mia-call-follow-up`, `mia-crm-data-check`) wait for your explicit approval before writing anything.
-- Every fact in a report carries its source and date. A claim with no evidence reads "unconfirmed" or "not seen".
-- Reports describe work, not people. They give no scores, rankings, or personal adjectives for reps.
+**Set up**
 
-## How the pack files work
+- **[mia-pack-setup](skills/mia-pack-setup/SKILL.md)**: Drafts your starter pack files from your CRM, calls and email. *"Set up my pack"*
 
-Nine Markdown files in `config/` describe how your team sells.
+**Every day**
 
-| File | Scope | Holds |
-|---|---|---|
-| `deal-lifecycle.md` | team | Stages, entry and exit conditions, proof for each stage |
-| `scoring-axes.md` | team | Categories (Commit, Best Case, Pipeline), flags, risk signals, definitions |
-| `buyers-and-competition.md` | team | Who buys, what you offer, how you win and lose against each competitor |
-| `market-physics.md` | team | Patterns across closed deals and where deals stall |
-| `winning-plays.md` | team and personal | Repeatable moves taken from won deals |
-| `team-standards.md` | team | What every deal gets, what leaders review weekly, handoffs |
-| `crm-guide.md` | team | Where deals live in the CRM and which fields to update when |
-| `voice.md` | personal | How one person writes to buyers |
-| `working-style.md` | personal | Role (rep, leader, both), standing rules, recurring slips |
+- **[mia-daily-sync](skills/mia-daily-sync/SKILL.md)**: One phone-sized page with today's meetings, replies waiting, risks and next moves. *"Start my Daily Sync"*
+- **[mia-meeting-prep](skills/mia-meeting-prep/SKILL.md)**: A 60-second briefing for one external meeting. *"Meeting prep for Acme"*
+- **[mia-call-follow-up](skills/mia-call-follow-up/SKILL.md)**: Recap email draft, CRM change proposal and dated tasks for the call that just ended. *"Follow up on my last call"*
+- **[mia-next-move](skills/mia-next-move/SKILL.md)**: One specific action and a ready-to-send message for a quiet deal. *"Next move for Acme"*
 
-Rules that keep the files trustworthy:
+**Every week**
 
-- **Frontmatter.** Each file declares `scope`, `version`, `updated`, `owner`, and `status` (`seed` or `reviewed`).
-- **Versioning.** Raise MAJOR when an edit changes how an existing deal is classified. Raise MINOR for additions, PATCH for wording. Add one Changelog line per edit.
-- **Precedence.** Team files outrank personal files. The exception is `voice.md`, which always belongs to the individual.
-- **Source tags.** Factual lines end with their origin: `[crm n=46]`, `[calls n=8]`, `[email n=22]`, `[stated]`, or `[inferred]`.
-- **Stamped outputs.** The last line of every output reads like `Config: scoring-axes 1.2.0, deal-lifecycle 1.0.1`.
-- **Graceful gaps.** A missing file means defaults apply and the output says so. A `seed` file means starting values apply and the output is labelled provisional.
+- **[mia-weekly-review](skills/mia-weekly-review/SKILL.md)**: Every open deal on one page, with a Team sweep and Coach's questions for leaders. *"Open my Weekly Review"*
+- **[mia-forecast](skills/mia-forecast/SKILL.md)**: Commit, Best Case and Pipeline sorted from buyer evidence, set beside the CRM commit. *"Show my forecast"*
+- **[mia-at-risk-review](skills/mia-at-risk-review/SKILL.md)**: Winnable deals that drifted from your own process, with a dollar figure on the gaps. *"Show deals at risk"*
 
-The full format is in [config/SCHEMA.md](config/SCHEMA.md).
+**Keep it honest**
 
-The criteria in `scoring-axes.md` start with placeholder values. Replace them with numbers from your own closed deals, then run `mia-axes-calibration` to check them.
+- **[mia-crm-data-check](skills/mia-crm-data-check/SKILL.md)**: Learns how your team uses the CRM, checks open deals against it, and prepares fixes for approval. *"Check my CRM data"*
+- **[mia-axes-calibration](skills/mia-axes-calibration/SKILL.md)**: Replays your scoring criteria on closed deals and proposes edits where outcomes disagree. *"Calibrate my axes"*
+
+Each skill says what it is not for and which skill to use instead, so a plain request reaches the right one.
+
+## How it works
+
+```
+CRM, calls, email  ->  mia-pack-setup  ->  pack files (you review)  ->  other skills  ->  report ending in a Config: line
+```
+
+1. `mia-pack-setup` drafts nine Markdown **pack files** that describe how your team sells: stages, buyers, competitors, scoring criteria, voice, standing rules.
+2. You and your team review and version them like code.
+3. The other skills read those files and end every output with a `Config:` line. Two people with different version numbers know their copies have drifted.
+
+Pack files hold type-level descriptions only. They contain no buyer names, no exact amounts and no open-deal details. File list, frontmatter, versioning and precedence rules: [docs/pack-files.md](docs/pack-files.md).
+
+## Install
+
+| Where | How |
+|---|---|
+| Claude Code, marketplace | `/plugin marketplace add Additor/mia-open-sales-skills` then `/plugin install mia-open-sales-skills@mia-open-sales-skills` |
+| Claude Code, manual | `git clone https://github.com/Additor/mia-open-sales-skills.git` then `cp -r mia-open-sales-skills/skills/* ~/.claude/skills/` (or `<project>/.claude/skills/`) |
+| Claude on the web or desktop | Zip a folder from `skills/`, for example `skills/mia-daily-sync`, and upload it in Settings under Skills. Install `mia-pack-setup` first |
+| Any other AI tool | Paste a skill's `SKILL.md` into the instructions and attach that folder's `config/` and `assets/` files. Each `SKILL.md` stays under 15 KB |
+
+Each folder in `skills/` is self-contained, so you can install one skill or all ten. While the repository is private, Claude Code needs a GitHub login that can read it.
 
 ## Team rollout
 
-1. The leader runs `mia-pack-setup` and reads the six team files it writes.
-2. The leader fixes what is wrong, sets `status: reviewed`, and raises the versions.
-3. The leader shares the files as one `team-pack` folder or zip, and posts the current version of each file.
-4. Each rep drops the folder next to their own pack files and runs `mia-pack-setup`. It builds only their `voice.md` and `working-style.md`.
-5. A rep who thinks a criterion is wrong sends the leader the file name, the reason, and the kind of deals affected. Nobody edits team files locally.
+1. The leader runs `mia-pack-setup`, reads the six team files, fixes them, and sets `status: reviewed`.
+2. The leader shares them as one `team-pack` folder and posts the current version of each file.
+3. Each rep adds the folder beside their own files and runs `mia-pack-setup`, which builds only their voice and working style.
+4. A rep who disagrees with a criterion sends the leader the file, the reason and the deals affected. Team files are never edited locally.
 
-Step-by-step detail is in [config/TEAM-ROLLOUT.md](config/TEAM-ROLLOUT.md).
+Full procedure: [config/TEAM-ROLLOUT.md](config/TEAM-ROLLOUT.md).
 
-## Customizing
+## Customize
 
-| You want to change | Edit |
+| To change | Edit |
 |---|---|
 | Thresholds, categories, risk signals | `config/scoring-axes.md` |
-| Stages and their entry conditions | `config/deal-lifecycle.md` |
+| Stages and entry conditions | `config/deal-lifecycle.md` |
 | Team rules and weekly review items | `config/team-standards.md` |
 | How drafts sound | `config/voice.md` |
-| What a skill does or how it lays out a report | `src/skills/<name>.md`, then run `python3 scripts/build.py` |
+| What a skill does, or a report layout | `src/skills/<name>.md`, then `python3 scripts/build.py` |
 
-Do not edit the generated files in `skills/`. `scripts/build.py` rebuilds each `skills/<name>/SKILL.md` from `src/skills/<name>.md`, inserts the shared rules from `src/shared/context.md`, and copies the matching `config/` and `assets/` into each skill folder. It warns when a SKILL.md passes 15 KB.
+Never edit `skills/` by hand. The build regenerates it. Raise the file version and add a Changelog line with each pack file edit.
 
-## Repository layout
+## Safety and privacy
 
-```
-.claude-plugin/       Plugin and marketplace manifests
-skills/               Built skills, one self-contained folder each (SKILL.md, config/, assets/)
-src/skills/           Skill sources, edit these
-src/shared/context.md Shared rules inserted into every skill
-config/               Pack file templates and the schema
-assets/               Report shell (HTML), output schemas, reference notes
-scripts/build.py      Builds skills/ from src/
-```
-
-## Privacy
-
+- Report skills are read-only. They never send, post or write to your CRM.
+- Skills that propose changes (`mia-call-follow-up`, `mia-crm-data-check`) wait for your explicit approval.
 - Skills run when you call them and read only the sources you connect.
-- Reports make no network request when they open.
-- A report footer may carry one link to the Sales AQ check, with a campaign tag and no deal data. It is followed only if you click it.
-- Pack files hold type-level descriptions. Review them before you share them outside your team.
+- Reports make no network request when they open. A footer may carry one link to the Sales AQ check, with a campaign tag and no deal data, followed only if you click it.
+- Reports describe work, not people: no scores, rankings or personal adjectives for reps.
 
-## Limits of the beta
+## Known limits
 
-- The free pack cannot force everyone onto the same files. Each person holds a copy, and copies can drift. The `Config:` line on every output is how you notice.
-- Live connector paths and marketplace install are still being verified.
-- Files go stale and reviews happen only when someone asks for them. A hosted setup with account-level memory and scheduled runs is what [Mia](https://withmia.ai) provides for teams that outgrow the manual routine.
+The free pack cannot force a team onto the same files. Each person holds a copy, and copies drift. The `Config:` line is how you notice. Files also go stale, and reviews run only when someone asks. [Mia](https://withmia.ai) is the hosted option for teams that outgrow the manual routine: one shared source, scheduled runs, and account-level memory.
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Edit `src/` and `config/`, run `python3 scripts/build.py`, and commit the rebuilt `skills/` folder with your change.
+Issues and pull requests are welcome. Setup, repository layout and rules: [CONTRIBUTING.md](CONTRIBUTING.md). Release notes: [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-GNU Affero General Public License v3.0 only (`AGPL-3.0-only`). See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+[AGPL-3.0-only](LICENSE). Copyright 2026 Withmia.
 
-In practice:
+- Use it inside your company freely.
+- If you distribute a modified copy, or run one as a hosted service for others, publish your modified source under the same license.
+- Pack files and reports you generate from your own data are your content.
 
-- **Use it inside your company, freely.** Install the skills, edit the pack files, and run them on your own deals. No obligation arises from internal use.
-- **Share your changes if you share the pack.** If you distribute a modified copy, or offer a modified version to others as a hosted service over a network, you must publish your modified source under the same license.
-- **Keep the notices.** Copies must carry the LICENSE and NOTICE files.
-- **Your data stays yours.** The license covers the files in this repository. Pack files and reports you generate from your own CRM, calls, and email are your content.
-
-This summary is a convenience. The LICENSE file is the binding text.
-
-Copyright 2026 Withmia (withmia.ai).
+The LICENSE file is the binding text.

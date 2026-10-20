@@ -1,5 +1,20 @@
 # Contributing
 
+## Repository layout
+
+```
+.claude-plugin/        Plugin and marketplace manifests
+skills/                Built skills, one self-contained folder each (SKILL.md, config/, assets/). Generated
+src/skills/            Skill sources. Edit these
+src/shared/context.md  Shared rules inserted into every skill
+config/                Pack file templates, schema, team rollout guide
+assets/                Report shell (HTML), output schemas, reference notes
+docs/                  Longer documentation linked from the README
+scripts/build.py       Builds skills/ from src/
+```
+
+`scripts/build.py` rebuilds each `skills/<name>/SKILL.md` from `src/skills/<name>.md`, inserts the shared rules, and copies the matching `config/` and `assets/` into each skill folder.
+
 ## Where to edit
 
 | Change | Edit | Then |
