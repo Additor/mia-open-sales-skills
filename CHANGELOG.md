@@ -9,6 +9,7 @@
 - Added `evals/`: five headless end-to-end cases with fictional fixtures (`evals/run.sh`).
 - README images use the official Mia logo; the hero puts it at the bottom right. Removed captions, footers and wording that read as unfinished.
 - Sources moved into `source/` (skills, shared rules, config templates, assets, `build.py`). Each skill folder now carries only the files it references, so `skills/` dropped from 178 to 132 files. The build fails on a missing reference or a `SKILL.md` over 15 KB.
+- README cut to a hook, a report preview and a three-step quick start. Team rollout, Customize and Safety and privacy moved to `docs/guide.md`.
 - Install with `npx skills add Additor/mia-open-sales-skills`, plus Codex paths. New `docs/environments.md`.
 
 ## 0.1.0 (2026-10-20)
