@@ -20,7 +20,7 @@ A skill picks the mode from the tools it has. You do not configure it.
 2. Files attached to the conversation or kept in the project.
 3. The `config/` templates inside the skill folder. These are defaults and count as `seed`, so the output carries the provisional line.
 
-Edit the files in `mia-pack/`. The `config/` folders in this repository and inside each skill are templates, and changes there affect only new setups.
+Edit the files in `mia-pack/`. The `source/config/` folder in this repository and the `config/` folders inside each skill are templates, and changes there affect only new setups.
 
 ## Folder layout in workspace mode
 
@@ -50,4 +50,4 @@ Each skill folder is self-contained, so you can install one skill or all ten.
 
 ## Team setup
 
-Leader: run `mia-pack-setup`, review the team files, set `status: reviewed`, and either commit them under `mia-pack/` in a shared repository or share the `team-pack` folder. Rep: put the team files in `mia-pack/`, then run `mia-pack-setup`, which builds only your voice and working style. Full procedure: [config/TEAM-ROLLOUT.md](../config/TEAM-ROLLOUT.md).
+Leader: run `mia-pack-setup`, review the team files, set `status: reviewed`, and either commit them under `mia-pack/` in a shared repository or share the `team-pack` folder. Rep: put the team files in `mia-pack/`, then run `mia-pack-setup`, which builds only your voice and working style. Full procedure: [source/config/TEAM-ROLLOUT.md](../source/config/TEAM-ROLLOUT.md).

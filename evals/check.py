@@ -17,7 +17,7 @@ def names():
 
 def amounts():
     repo = pathlib.Path(__file__).resolve().parent.parent
-    seed = " ".join(f.read_text() for f in (repo / "config").glob("*.md"))
+    seed = " ".join(f.read_text() for f in (repo / "source" / "config").glob("*.md"))
     with open(ws / "deals.csv") as f:
         vals = {int(r["amount"]) for r in csv.DictReader(f) if r["amount"]}
     return {v for v in vals if f"{v:,}" not in seed and str(v) not in seed}

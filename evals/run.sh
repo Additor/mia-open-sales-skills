@@ -30,7 +30,7 @@ for c in "${CASES[@]}"; do
   if [ $seed -eq 1 ]; then
     mkdir -p "$ws/mia-pack"
     for f in deal-lifecycle buyers-and-competition market-physics winning-plays team-standards scoring-axes crm-guide voice working-style; do
-      cp "$REPO/config/$f.md" "$ws/mia-pack/"
+      cp "$REPO/source/config/$f.md" "$ws/mia-pack/"
     done
     shasum -a 256 "$ws/mia-pack/scoring-axes.md" | cut -d' ' -f1 > "$ws/.scoring-axes.sha"
   fi

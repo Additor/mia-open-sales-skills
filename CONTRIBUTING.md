@@ -3,34 +3,33 @@
 ## Repository layout
 
 ```
-.claude-plugin/        Plugin and marketplace manifests
-skills/                Built skills, one self-contained folder each (SKILL.md, config/, assets/). Generated
-src/skills/            Skill sources. Edit these
-src/shared/context.md  Shared rules inserted into every skill
-config/                Pack file templates, schema, team rollout guide
-assets/                Report shell (HTML), output schemas, reference notes
-docs/                  Longer documentation linked from the README
-docs/images/           README images (JPG), HTML sources in src/, paintings in src/art/
-scripts/build.py       Builds skills/ from src/
+skills/                Built skills, one self-contained folder each. Generated, do not edit
+source/skills/         Skill sources. Edit these
+source/shared/         Rules inserted into every skill (context.md)
+source/config/         Pack file templates, schema, team rollout guide
+source/assets/         Report shell (HTML), output schemas, reference notes
+source/build.py        Builds skills/ from source/
+docs/                  Documentation linked from the README, and README images (docs/images/)
+evals/                 Headless end-to-end checks
 ```
 
-`scripts/build.py` rebuilds each `skills/<name>/SKILL.md` from `src/skills/<name>.md`, inserts the shared rules, and copies the matching `config/` and `assets/` into each skill folder.
+`source/build.py` writes each `skills/<name>/SKILL.md` from `source/skills/<name>.md` with the shared rules inserted. It copies into each skill folder only the `config/` and `assets/` files that skill references, directly or through another file it carries. The build fails when a referenced file is missing or a `SKILL.md` passes 15 KB.
 
 ## Where to edit
 
 | Change | Edit | Then |
 |---|---|---|
-| Skill behavior or report layout | `src/skills/<name>.md` | Run `python3 scripts/build.py` |
-| Rules shared by all skills | `src/shared/context.md` | Run `python3 scripts/build.py` |
-| Pack file templates | `config/*.md` | Run `python3 scripts/build.py` |
-| Output schemas, report shell, reference notes | `assets/` | Run `python3 scripts/build.py` |
+| Skill behavior or report layout | `source/skills/<name>.md` | Run `python3 source/build.py` |
+| Rules shared by all skills | `source/shared/context.md` | Run `python3 source/build.py` |
+| Pack file templates | `source/config/*.md` | Run `python3 source/build.py` |
+| Output schemas, report shell, reference notes | `source/assets/` | Run `python3 source/build.py` |
 
-Never edit `skills/` by hand. The build script deletes and regenerates it. Commit the rebuilt `skills/` folder with your source change.
+Never edit `skills/` by hand. Commit the rebuilt `skills/` folder with your source change.
 
 ## Rules for changes
 
-1. **Keep each SKILL.md under 15 KB.** The build prints `OVER LIMIT` when a skill passes it.
-2. **Version pack files.** Any edit to a file in `config/` raises its `version`, updates `updated`, and adds one Changelog line. See `config/SCHEMA.md` for the MAJOR, MINOR, and PATCH rules.
+1. **Keep each SKILL.md under 15 KB.** The build fails when a skill passes it.
+2. **Version pack files.** Any edit to a file in `source/config/` raises its `version`, updates `updated`, and adds one Changelog line. See `source/config/SCHEMA.md` for the MAJOR, MINOR, and PATCH rules.
 3. **Stay type-level.** Pack files never contain buyer names, buyer companies, exact amounts, or details of open deals.
 4. **Name what each skill is not for.** The `description` in each skill's frontmatter says which skill to use instead. Keep that routing accurate when you add or rename a skill.
 5. **Read-only by default.** A skill that writes to a CRM, inbox, or calendar asks for approval first.
@@ -38,9 +37,9 @@ Never edit `skills/` by hand. The build script deletes and regenerates it. Commi
 
 ## Adding a skill
 
-1. Create `src/skills/mia-<name>.md` with `name` and `description` frontmatter and a `{{SHARED}}` marker after the title.
-2. If it produces a report, add its output schema as `assets/schemas/mia-<name>.md`.
-3. Run `python3 scripts/build.py`.
+1. Create `source/skills/mia-<name>.md` with `name` and `description` frontmatter and a `{{SHARED}}` marker after the title.
+2. If it produces a report, add its output schema as `source/assets/schemas/mia-<name>.md`.
+3. Run `python3 source/build.py`.
 4. Add a row to the skill table in `README.md`.
 5. Bump the version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
 

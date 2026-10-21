@@ -121,7 +121,7 @@ Skills read `mia-pack/` first, then attached files, then the built-in templates.
 3. Each rep adds the files to `mia-pack/` and runs `mia-pack-setup`, which builds only their voice and working style.
 4. A rep who disagrees with a criterion sends the leader the file, the reason and the deals affected. Team files are never edited locally.
 
-Full procedure: [config/TEAM-ROLLOUT.md](config/TEAM-ROLLOUT.md).
+Full procedure: [source/config/TEAM-ROLLOUT.md](source/config/TEAM-ROLLOUT.md).
 
 ## Customize
 
@@ -134,9 +134,9 @@ Edit the pack files that setup created in `mia-pack/`:
 | Team rules and weekly review items | `mia-pack/team-standards.md` |
 | How drafts sound | `mia-pack/voice.md` |
 
-Raise the file version and add a Changelog line with each edit. The `config/` folder in this repository holds the templates those files start from.
+Raise the file version and add a Changelog line with each edit. The `source/config/` folder in this repository holds the templates those files start from.
 
-To change what a skill itself does or how a report is laid out, edit `src/skills/<name>.md` in a fork and run `python3 scripts/build.py`. The build regenerates `skills/`, so never edit that folder by hand.
+To change what a skill itself does or how a report is laid out, edit `source/skills/<name>.md` in a fork and run `python3 source/build.py`. The build regenerates `skills/`, so never edit that folder by hand.
 
 ## Safety and privacy
 
